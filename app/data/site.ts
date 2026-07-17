@@ -26,8 +26,8 @@ export const categories: Category[] = [
 ]
 
 export const articles: Article[] = [
-  { id: 'jiufen', category: 'taiwan', title: '九份雨夜：燈籠亮起的那一刻', excerpt: '山城的階梯濕濕的，紅燈籠倒映在青石板上，這是九份最迷人的樣子。', date: '2026-02-14', location: '新北・九份', seed: 'jiufen' },
-  { id: 'yandui', category: 'taiwan', title: '鹽埕國小的老榕樹下', excerpt: '一棵老樹、一間老校，時間在這裡走得特別慢。', date: '2026-01-22', location: '高雄・鹽埕', seed: 'yandui' },
+  { id: 'buyan-pavilion', category: 'taiwan', title: '不厭亭：雙溪往九份路上的夕陽秘境', excerpt: '沿著蜿蜒山路開到制高點，滿山芒草在風裡搖，等一場染紅雲海的日落。', date: '2026-02-14', location: '新北・九份', seed: 'buyanpavilion' },
+  { id: 'liandong-elementary', category: 'taiwan', title: '濂洞國小：彩色溜滑梯與陰陽海的對望', excerpt: '藏在金瓜石山坳裡的小學，操場邊的彩虹溜滑梯背後，就是那片著名的陰陽海。', date: '2026-01-22', location: '新北・金瓜石', seed: 'liandongelementary' },
   { id: 'sun-moon-lake', category: 'taiwan', title: '日月潭騎車環湖一日', excerpt: '沿著環湖公路慢慢騎，山嵐與湖水一直在變換顏色。', date: '2025-12-08', location: '南投・日月潭', seed: 'sunmoonlake' },
   { id: 'ginkgo-utokyo', category: 'japan', title: '東京大學銀杏大道的十一月', excerpt: '滿地金黃的銀杏葉，是每年秋天最期待的畫面。', date: '2025-11-20', location: '東京・本鄉', seed: 'ginkgo' },
   { id: 'roppongi-lights', category: 'japan', title: '六本木點燈夜：城市的另一種溫柔', excerpt: '冬天的東京很冷，但六本木的燈光讓人捨不得回家。', date: '2025-12-24', location: '東京・六本木', seed: 'roppongi' },
