@@ -13,6 +13,7 @@ export interface Article {
   date: string
   location: string
   seed: string
+  body: string[]
 }
 
 export const categories: Category[] = [
@@ -26,24 +27,258 @@ export const categories: Category[] = [
 ]
 
 export const articles: Article[] = [
-  { id: 'buyan-pavilion', category: 'taiwan', title: '不厭亭：雙溪往九份路上的夕陽秘境', excerpt: '沿著蜿蜒山路開到制高點，滿山芒草在風裡搖，等一場染紅雲海的日落。', date: '2026-02-14', location: '新北・九份', seed: 'buyanpavilion' },
-  { id: 'liandong-elementary', category: 'taiwan', title: '濂洞國小：彩色溜滑梯與陰陽海的對望', excerpt: '藏在金瓜石山坳裡的小學，操場邊的彩虹溜滑梯背後，就是那片著名的陰陽海。', date: '2026-01-22', location: '新北・金瓜石', seed: 'liandongelementary' },
-  { id: 'sun-moon-lake', category: 'taiwan', title: '日月潭騎車環湖一日', excerpt: '沿著環湖公路慢慢騎，山嵐與湖水一直在變換顏色。', date: '2025-12-08', location: '南投・日月潭', seed: 'sunmoonlake' },
-  { id: 'ginkgo-utokyo', category: 'japan', title: '東京大學銀杏大道的十一月', excerpt: '滿地金黃的銀杏葉，是每年秋天最期待的畫面。', date: '2025-11-20', location: '東京・本鄉', seed: 'ginkgo' },
-  { id: 'roppongi-lights', category: 'japan', title: '六本木點燈夜：城市的另一種溫柔', excerpt: '冬天的東京很冷，但六本木的燈光讓人捨不得回家。', date: '2025-12-24', location: '東京・六本木', seed: 'roppongi' },
-  { id: 'kyoto-arashiyama', category: 'japan', title: '嵐山竹林裡的光影', excerpt: '陽光穿過竹葉的縫隙，灑在石板路上，安靜得只聽得見風聲。', date: '2025-10-05', location: '京都・嵐山', seed: 'arashiyama' },
-  { id: 'seoul-tower', category: 'global', title: 'N首爾塔下的櫻花季', excerpt: '纜車緩緩上升，整座城市被粉色的櫻花覆蓋。', date: '2026-04-02', location: '首爾・南山', seed: 'nseoultower' },
-  { id: 'seoul-forest', category: 'global', title: '首爾林散步：城市裡的呼吸感', excerpt: '在高樓之間找到一片森林，是首爾最讓人驚喜的角落。', date: '2026-04-05', location: '首爾・聖水洞', seed: 'seoulforest' },
-  { id: 'kyunghee-univ', category: 'global', title: '慶熙大學的歐風校園', excerpt: '一磚一瓦都像電影場景，難怪是首爾最上鏡的大學。', date: '2026-04-08', location: '首爾・回基洞', seed: 'kyunghee' },
-  { id: 'gear-notes', category: 'photography', title: '旅行攝影包該帶什麼？', excerpt: '從機身到腳架，整理這幾年旅拍下來最實用的裝備清單。', date: '2026-03-01', location: '', seed: 'geargear' },
-  { id: 'golden-hour', category: 'photography', title: '如何抓住黃金時刻的光線', excerpt: '日出日落前後的三十分鐘，是風景攝影最珍貴的時間。', date: '2026-02-18', location: '', seed: 'goldenhour' },
-  { id: 'seoul-cafe', category: 'food', title: '聖水洞老宅咖啡廳巡禮', excerpt: '把老屋改造成咖啡廳是首爾最迷人的日常，每一間都有自己的故事。', date: '2026-04-06', location: '首爾・聖水洞', seed: 'seoulcafe' },
-  { id: 'tteokbokki', category: 'food', title: '深夜辣炒年糕地圖', excerpt: '收錄幾間在地人才知道的深夜食堂，微辣、香氣十足。', date: '2026-04-09', location: '首爾', seed: 'tteok' },
-  { id: 'jiufen-teahouse', category: 'food', title: '九份茶樓的一壺午後', excerpt: '坐在老茶樓的窗邊，看山、看海，配一壺熱茶剛剛好。', date: '2026-02-15', location: '新北・九份', seed: 'teahouse' },
-  { id: 'ryokan-note', category: 'stay', title: '京都町屋民宿住宿心得', excerpt: '推開木門就是另一個時代，安靜、講究、充滿溫度。', date: '2025-10-04', location: '京都', seed: 'ryokan' },
-  { id: 'seaside-hotel', category: 'stay', title: '台東海景旅店推薦', excerpt: '打開窗就是太平洋，這樣的早晨值得專程前往。', date: '2025-09-12', location: '台東', seed: 'seaside' },
-  { id: 'day-trip-jiaoxi', category: 'trips', title: '礁溪一日小旅行路線', excerpt: '泡湯、吃小吃、看稻田，不用遠行也能徹底放鬆。', date: '2026-01-05', location: '宜蘭・礁溪', seed: 'jiaoxi' },
-  { id: 'day-trip-tamsui', category: 'trips', title: '淡水老街半日散策', excerpt: '從老街走到漁人碼頭，剛好趕上一場漂亮的日落。', date: '2025-11-30', location: '新北・淡水', seed: 'tamsui' },
+  {
+    id: 'buyan-pavilion',
+    category: 'taiwan',
+    title: '不厭亭：雙溪往九份路上的夕陽秘境',
+    excerpt: '沿著蜿蜒山路開到制高點，滿山芒草在風裡搖，等一場染紅雲海的日落。',
+    date: '2026-02-14',
+    location: '新北・九份',
+    seed: 'buyanpavilion',
+    body: [
+      '從雙溪開往九份的產業道路一路爬升，過了某個髮夾彎之後，視野忽然整個打開，不厭亭就在這個制高點上，安靜地看著整片山谷。',
+      '秋末冬初來最值得，滿山的芒草被風吹成一片銀白的浪，夕陽從海平面慢慢沉下去的時候，天空會先變橘，再轉成一種很難形容的粉紫色。',
+      '建議傍晚前半小時到，先找好停車位，再慢慢走到亭子邊等光線變化，山上風大，記得多帶件外套。',
+    ],
+  },
+  {
+    id: 'liandong-elementary',
+    category: 'taiwan',
+    title: '濂洞國小：彩色溜滑梯與陰陽海的對望',
+    excerpt: '藏在金瓜石山坳裡的小學，操場邊的彩虹溜滑梯背後，就是那片著名的陰陽海。',
+    date: '2026-01-22',
+    location: '新北・金瓜石',
+    seed: 'liandongelementary',
+    body: [
+      '這間小學規模不大，卻因為操場邊那組彩色溜滑梯配上遠方陰陽海的畫面，成了很多人專程繞路也要拍一張的地方。',
+      '陰陽海是海水受礦區含鐵物質影響，呈現一半藍一半黃的分界，天氣好的時候界線特別明顯，跟繽紛的遊具放在同一個畫面裡，反差感很奇妙。',
+      '這裡仍是正常上課的學校，建議選假日或放學後前往，拍照時保持安靜，不要打擾到附近居民。',
+    ],
+  },
+  {
+    id: 'sun-moon-lake',
+    category: 'taiwan',
+    title: '日月潭騎車環湖一日',
+    excerpt: '沿著環湖公路慢慢騎，山嵐與湖水一直在變換顏色。',
+    date: '2025-12-08',
+    location: '南投・日月潭',
+    seed: 'sunmoonlake',
+    body: [
+      '租了兩台單車，從水社碼頭出發，沿著向山自行車道一路騎到向山遊客中心，這段路被稱作全台最美的自行車道之一，貼著水面騎，湖光山色幾乎伸手可及。',
+      '中途在文武廟附近停下來喝杯茶，看纜車緩緩滑過對岸的山頭，午後的湖面會起一層薄薄的霧，把整座山都染成水墨畫的顏色。',
+      '全程大約騎三到四小時，建議安排一整天，中午可以在伊達邵老街簡單吃點東西，補充體力再上路。',
+    ],
+  },
+  {
+    id: 'ginkgo-utokyo',
+    category: 'japan',
+    title: '東京大學銀杏大道的十一月',
+    excerpt: '滿地金黃的銀杏葉，是每年秋天最期待的畫面。',
+    date: '2025-11-20',
+    location: '東京・本鄉',
+    seed: 'ginkgo',
+    body: [
+      '每年十一月中下旬，東京大學本鄉校區的銀杏大道會準時換上一身金黃，兩排高大的銀杏樹沿著安田講堂前的步道排開，是東京入秋最具代表性的風景之一。',
+      '建議挑一個晴朗無風的早上前往，這時候葉子還沒被風吹落太多，陽光穿過樹葉會有種透亮的金色光暈，地上鋪滿落葉的時候踩起來也特別有秋天的感覺。',
+      '校園本身對外開放，沒有門票，但畢竟是正在上課的大學，拍照時盡量放低音量，也要留意不要擋到學生的通行動線。',
+    ],
+  },
+  {
+    id: 'roppongi-lights',
+    category: 'japan',
+    title: '六本木點燈夜：城市的另一種溫柔',
+    excerpt: '冬天的東京很冷，但六本木的燈光讓人捨不得回家。',
+    date: '2025-12-24',
+    location: '東京・六本木',
+    seed: 'roppongi',
+    body: [
+      '每年十一月底到隔年二月，六本木之丘的櫸樹坂通會點上藍白色的燈飾，一路延伸將近四百公尺，是東京冬天最浪漫的街景之一。',
+      '建議傍晚天色剛暗下來的時候到，這時候天空還留有一點藍紫色，跟地面的燈光互相映襯，拍起來層次最豐富，晚一點天全黑之後人潮也會變多。',
+      '走累了可以到附近的東京中城稍作休息，那裡也有自己的點燈裝置，一路逛下來剛好可以安排成一段完整的散步路線。',
+    ],
+  },
+  {
+    id: 'kyoto-arashiyama',
+    category: 'japan',
+    title: '嵐山竹林裡的光影',
+    excerpt: '陽光穿過竹葉的縫隙，灑在石板路上，安靜得只聽得見風聲。',
+    date: '2025-10-05',
+    location: '京都・嵐山',
+    seed: 'arashiyama',
+    body: [
+      '從嵐山站步行到竹林小徑大約十分鐘，一走進去就像進入另一個世界，兩側是高聳筆直的竹子，陽光從縫隙間灑落，風吹過的時候竹葉會發出沙沙的聲音。',
+      '這裡是嵐山最熱門的景點之一，建議一早開園前後就到，人比較少，光線也比較柔和，可以慢慢拍不用趕時間。',
+      '沿著小徑走到底會接到野宮神社，順路可以進去參拜一下，再繼續往嵐山公園或渡月橋的方向走，安排半天剛剛好。',
+    ],
+  },
+  {
+    id: 'seoul-tower',
+    category: 'global',
+    title: 'N首爾塔下的櫻花季',
+    excerpt: '纜車緩緩上升，整座城市被粉色的櫻花覆蓋。',
+    date: '2026-04-02',
+    location: '首爾・南山',
+    seed: 'nseoultower',
+    body: [
+      '每年四月初，南山公園沿著登山步道會開滿櫻花，搭纜車上山的途中就能俯瞰整片粉色的山坡，天氣好的時候還能遠眺首爾市區的天際線。',
+      '建議白天先繞公園走一圈拍花，傍晚再上塔頂看夜景，日夜兩種氛圍完全不同，塔頂的燈光跟山下的櫻花相互呼應，很值得排一整個下午在這裡。',
+      '花期通常只有一到兩週，行前建議先查一下當年的開花預測，避免撲空。',
+    ],
+  },
+  {
+    id: 'seoul-forest',
+    category: 'global',
+    title: '首爾林散步：城市裡的呼吸感',
+    excerpt: '在高樓之間找到一片森林，是首爾最讓人驚喜的角落。',
+    date: '2026-04-05',
+    location: '首爾・聖水洞',
+    seed: 'seoulforest',
+    body: [
+      '首爾林是首爾市區裡少見的大片綠地，緊鄰漢江，園區裡有鹿苑、生態池跟大片草地，很多當地人會帶野餐墊過來，度過悠閒的午後。',
+      '春天來的話，園區裡的櫻花跟油菜花會一起盛開，沿著河岸的步道騎腳踏車或散步都很舒服，跟外面聖水洞熱鬧的咖啡廳街形成一種安靜的對比。',
+      '推薦傍晚時分過來，夕陽會把整片草地染成暖黃色，很多人在這裡待到天黑才慢慢散去。',
+    ],
+  },
+  {
+    id: 'kyunghee-univ',
+    category: 'global',
+    title: '慶熙大學的歐風校園',
+    excerpt: '一磚一瓦都像電影場景，難怪是首爾最上鏡的大學。',
+    date: '2026-04-08',
+    location: '首爾・回基洞',
+    seed: 'kyunghee',
+    body: [
+      '慶熙大學的和平殿堂跟本館建築群，帶著濃厚的歐式古典風格，石柱與拱門搭配周圍的老樹，常被說像是誤闖歐洲某個城堡校園。',
+      '春天的時候，本館前的階梯兩側會開滿櫻花，跟後方的建築一起入鏡，是首爾大學校園裡數一數二好拍的角落，也吸引不少人專程來拍畢業照或婚紗照。',
+      '這裡仍是正常上課的校園，建議避開考試週前後的時間，安靜參觀，不要影響到學生。',
+    ],
+  },
+  {
+    id: 'gear-notes',
+    category: 'photography',
+    title: '旅行攝影包該帶什麼？',
+    excerpt: '從機身到腳架，整理這幾年旅拍下來最實用的裝備清單。',
+    date: '2026-03-01',
+    location: '',
+    seed: 'geargear',
+    body: [
+      '出門旅行拍照，行李空間有限，裝備越精簡越好。這幾年下來，固定會帶的就是一機兩鏡：一顆廣角用來拍風景跟建築，一顆標準變焦應付大部分日常場景。',
+      '腳架選輕便的碳纖維款，重量控制在一公斤以內，日出日落或夜景長曝光的時候會用到；備用電池跟記憶卡至少各帶兩份，旅途中充電不一定方便。',
+      '最後是一塊小小的鏡頭布跟氣吹，海邊或下雨天氣候潮濕，隨手清潔鏡頭是保護器材最簡單也最容易被忽略的習慣。',
+    ],
+  },
+  {
+    id: 'golden-hour',
+    category: 'photography',
+    title: '如何抓住黃金時刻的光線',
+    excerpt: '日出日落前後的三十分鐘，是風景攝影最珍貴的時間。',
+    date: '2026-02-18',
+    location: '',
+    seed: 'goldenhour',
+    body: [
+      '黃金時刻指的是日出後與日落前，太陽角度較低的那段時間，光線會透過大氣層折射出溫暖柔和的色調，陰影也比較柔和，很適合拍風景跟人像。',
+      '出發前建議先查好當地的日出日落時間，並提早半小時到現場，把腳架跟構圖都準備好，因為這段光線變化非常快，常常是幾分鐘內天空就完全不一樣了。',
+      '如果錯過黃金時刻，日落後的藍色時刻（Blue Hour）也很值得等，天空會轉成一種深邃的靛藍色，跟城市燈光搭配起來別有氣氛。',
+    ],
+  },
+  {
+    id: 'seoul-cafe',
+    category: 'food',
+    title: '聖水洞老宅咖啡廳巡禮',
+    excerpt: '把老屋改造成咖啡廳是首爾最迷人的日常，每一間都有自己的故事。',
+    date: '2026-04-06',
+    location: '首爾・聖水洞',
+    seed: 'seoulcafe',
+    body: [
+      '聖水洞原本是舊工業區，這幾年陸續有不少老工廠、老宅被改造成風格獨具的咖啡廳，磚牆、鐵件跟大片玻璃窗混搭出一種粗獷又溫暖的氛圍。',
+      '推薦挑一個平日下午過來，人潮比周末少一些，可以悠閒地找間喜歡的店坐下來，點杯咖啡配一塊手工甜點，慢慢消磨一整個下午。',
+      '這一帶巷弄很多，建議不用特別排路線，隨意走走逛逛，常常會在轉角遇到意外驚喜的小店。',
+    ],
+  },
+  {
+    id: 'tteokbokki',
+    category: 'food',
+    title: '深夜辣炒年糕地圖',
+    excerpt: '收錄幾間在地人才知道的深夜食堂，微辣、香氣十足。',
+    date: '2026-04-09',
+    location: '首爾',
+    seed: 'tteok',
+    body: [
+      '辣炒年糕是韓國深夜最療癒的宵夜之一，這次挑了幾間營業到凌晨、當地人也常去的小店，共通點是醬料熬得夠久，甜辣比例抓得剛剛好，不會死鹹或死甜。',
+      '有的店家會加入魚板、水煮蛋跟拉麵一起煮成一大鍋，吃到最後湯汁拌飯也很涮嘴；有的則走傳統路線，年糕本身彈牙有嚼勁，單吃就很滿足。',
+      '如果怕辣，可以先跟店家反映，大部分店都能調整辣度，不用因為怕辣就錯過這道經典小吃。',
+    ],
+  },
+  {
+    id: 'jiufen-teahouse',
+    category: 'food',
+    title: '九份茶樓的一壺午後',
+    excerpt: '坐在老茶樓的窗邊，看山、看海，配一壺熱茶剛剛好。',
+    date: '2026-02-15',
+    location: '新北・九份',
+    seed: 'teahouse',
+    body: [
+      '九份的老茶樓大多依山而建，木造的樓閣層層疊疊，坐在窗邊的位置，一邊是連綿的山巒，一邊能望見遠方的海，光是這個視野就值得專程走一趟。',
+      '點一壺當地的茶，配幾樣簡單的茶點，茶樓裡多半保留了懷舊的燈籠與木製裝潢，晚上點燈之後氣氛又更添幾分復古的味道。',
+      '假日人潮較多，建議提早前往或先訂位，才能悠閒地坐上一整個下午，不用趕時間。',
+    ],
+  },
+  {
+    id: 'ryokan-note',
+    category: 'stay',
+    title: '京都町屋民宿住宿心得',
+    excerpt: '推開木門就是另一個時代，安靜、講究、充滿溫度。',
+    date: '2025-10-04',
+    location: '京都',
+    seed: 'ryokan',
+    body: [
+      '這間町屋民宿由百年老屋改建，保留了原本的木造結構跟坪庭，一推開玄關的木門，喧鬧的街道聲瞬間被隔絕在外，只剩下庭院裡風吹過樹葉的聲音。',
+      '房間裡鋪著榻榻米，晚上店家會幫忙鋪好被褥，睡前泡個檜木浴缸，是這趟旅程裡最放鬆的時刻，也是最想念的一段回憶。',
+      '町屋大多藏在巷弄裡，入住前建議提早熟悉路線，晚上巷子裡的燈光不多，走起來別有一番京都特有的靜謐氣氛。',
+    ],
+  },
+  {
+    id: 'seaside-hotel',
+    category: 'stay',
+    title: '台東海景旅店推薦',
+    excerpt: '打開窗就是太平洋，這樣的早晨值得專程前往。',
+    date: '2025-09-12',
+    location: '台東',
+    seed: 'seaside',
+    body: [
+      '這間旅店幾乎每間房都面海，拉開窗簾就是一整片太平洋，早上被陽光跟海浪聲喚醒，是在都市裡很難得到的體驗。',
+      '旅店本身走簡約風格，不做過多裝飾，把最好的視野留給房客，公共空間也有面海的休息區，適合帶本書坐上一整個早晨。',
+      '附近的海岸線很適合傍晚散步，退潮的時候還能走到潮間帶，運氣好可以看到不少有趣的海洋生物。',
+    ],
+  },
+  {
+    id: 'day-trip-jiaoxi',
+    category: 'trips',
+    title: '礁溪一日小旅行路線',
+    excerpt: '泡湯、吃小吃、看稻田，不用遠行也能徹底放鬆。',
+    date: '2026-01-05',
+    location: '宜蘭・礁溪',
+    seed: 'jiaoxi',
+    body: [
+      '從台北搭火車到礁溪只要不到一小時，很適合安排成不過夜的一日小旅行。早上先到湯圍溝公園泡個免費足湯，暖暖身子再開始這趟行程。',
+      '中午在老街隨意吃幾樣在地小吃，蔥油餅跟肉羹是必點，接著到周邊的田野走走，冬天的宜蘭平原常常籠罩在薄霧裡，很有意境。',
+      '傍晚回程前，不妨找間溫泉會館泡個湯再上車，一整天下來身心都徹底放鬆，很適合當作平日忙碌後的小小充電。',
+    ],
+  },
+  {
+    id: 'day-trip-tamsui',
+    category: 'trips',
+    title: '淡水老街半日散策',
+    excerpt: '從老街走到漁人碼頭，剛好趕上一場漂亮的日落。',
+    date: '2025-11-30',
+    location: '新北・淡水',
+    seed: 'tamsui',
+    body: [
+      '搭捷運到淡水站，先沿著老街隨意逛逛，阿給、鐵蛋這些經典小吃都在步行範圍內，邊走邊吃剛好消磨一個下午。',
+      '沿著河岸步道慢慢走向漁人碼頭，這段路可以一路看著淡水河，天氣好的時候還能遠遠看到觀音山的稜線。',
+      '抓準日落前抵達情人橋，是欣賞淡水夕陽最經典的位置，橘紅色的天空配上停泊的船隻，很多人專程來這裡等這一刻。',
+    ],
+  },
 ]
 
 export function articlesByCategory(slug: string): Article[] {
@@ -52,4 +287,8 @@ export function articlesByCategory(slug: string): Article[] {
 
 export function categoryBySlug(slug: string): Category | undefined {
   return categories.find(c => c.slug === slug)
+}
+
+export function articleById(category: string, id: string): Article | undefined {
+  return articles.find(a => a.category === category && a.id === id)
 }

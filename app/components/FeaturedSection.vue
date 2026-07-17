@@ -20,7 +20,10 @@ const rest = props.articles.slice(1)
     </div>
 
     <div v-if="main" class="grid gap-6 lg:grid-cols-5">
-      <article class="group relative overflow-hidden rounded-2xl lg:col-span-3">
+      <NuxtLink
+        :to="`/${main.category}/${main.id}`"
+        class="group relative block overflow-hidden rounded-2xl lg:col-span-3"
+      >
         <img
           :src="`https://picsum.photos/seed/${main.seed}/900/700`"
           :alt="main.title"
@@ -39,12 +42,13 @@ const rest = props.articles.slice(1)
             {{ main.excerpt }}
           </p>
         </div>
-      </article>
+      </NuxtLink>
 
       <div class="flex flex-col gap-4 lg:col-span-2">
-        <article
+        <NuxtLink
           v-for="article in rest"
           :key="article.id"
+          :to="`/${article.category}/${article.id}`"
           class="group flex gap-4 overflow-hidden rounded-xl bg-stone-900 p-3 ring-1 ring-stone-800 transition active:scale-[0.98]"
         >
           <img
@@ -64,7 +68,7 @@ const rest = props.articles.slice(1)
               {{ article.excerpt }}
             </p>
           </div>
-        </article>
+        </NuxtLink>
       </div>
     </div>
   </section>

@@ -5,7 +5,10 @@ defineProps<{ article: Article }>()
 </script>
 
 <template>
-  <article class="group overflow-hidden rounded-lg bg-stone-900 shadow-sm ring-1 ring-stone-800 transition active:scale-[0.98]">
+  <NuxtLink
+    :to="`/${article.category}/${article.id}`"
+    class="group block overflow-hidden rounded-lg bg-stone-900 shadow-sm ring-1 ring-stone-800 transition active:scale-[0.98]"
+  >
     <div class="aspect-[4/3] overflow-hidden bg-stone-800">
       <img
         :src="`https://picsum.photos/seed/${article.seed}/640/480`"
@@ -25,5 +28,5 @@ defineProps<{ article: Article }>()
         {{ article.excerpt }}
       </p>
     </div>
-  </article>
+  </NuxtLink>
 </template>

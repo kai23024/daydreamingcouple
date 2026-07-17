@@ -21,7 +21,10 @@ const small = props.articles.slice(1, 3)
 
     <div class="grid gap-4 sm:grid-cols-5">
       <div v-if="big" class="sm:col-span-3">
-        <article class="group overflow-hidden rounded-2xl bg-stone-900 shadow-sm ring-1 ring-stone-800 transition active:scale-[0.98]">
+        <NuxtLink
+          :to="`/${big.category}/${big.id}`"
+          class="group block overflow-hidden rounded-2xl bg-stone-900 shadow-sm ring-1 ring-stone-800 transition active:scale-[0.98]"
+        >
           <div class="aspect-[16/10] overflow-hidden bg-stone-800">
             <img
               :src="`https://picsum.photos/seed/${big.seed}/900/560`"
@@ -41,7 +44,7 @@ const small = props.articles.slice(1, 3)
               {{ big.excerpt }}
             </p>
           </div>
-        </article>
+        </NuxtLink>
       </div>
 
       <div class="flex flex-col gap-4 sm:col-span-2">
