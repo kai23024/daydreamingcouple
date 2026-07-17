@@ -30,7 +30,7 @@ const navLinks = [
       </nav>
 
       <button
-        class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-700 text-stone-300 lg:hidden"
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-stone-700 text-stone-300 transition active:scale-[0.98] lg:hidden"
         aria-label="開啟選單"
         @click="open = !open"
       >

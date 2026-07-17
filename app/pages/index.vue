@@ -3,8 +3,10 @@ import { articlesByCategory, categoryBySlug } from '~/data/site'
 
 useHead({ title: '白日夢情侶檔｜Daydreaming Couple' })
 
-const featured = ['taiwan', 'japan', 'global', 'food']
-  .map(slug => ({ category: categoryBySlug(slug)!, articles: articlesByCategory(slug).slice(0, 3) }))
+const taiwan = { category: categoryBySlug('taiwan')!, articles: articlesByCategory('taiwan').slice(0, 3) }
+const japan = { category: categoryBySlug('japan')!, articles: articlesByCategory('japan').slice(0, 3) }
+const global = { category: categoryBySlug('global')!, articles: articlesByCategory('global').slice(0, 3) }
+const food = { category: categoryBySlug('food')!, articles: articlesByCategory('food').slice(0, 3) }
 </script>
 
 <template>
@@ -18,26 +20,24 @@ const featured = ['taiwan', 'japan', 'global', 'food']
       <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/10" />
       <div class="relative mx-auto flex max-w-6xl flex-col items-start px-5 py-28">
         <p class="text-xs uppercase tracking-[0.3em] text-amber-200">Daydreaming Couple</p>
-        <h1 class="mt-4 max-w-xl font-serif text-4xl leading-tight sm:text-5xl">
+        <h1 class="mt-4 max-w-xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
           走過的路，拍下的光<br>都是生活裡最柔軟的收藏
         </h1>
-        <p class="mt-4 max-w-md text-stone-200">
+        <p class="mt-4 max-w-md text-stone-300">
           一對喜歡旅行與美食的情侶，用文字與照片記錄台灣、日本與世界各地的日常冒險。
         </p>
         <NuxtLink
           to="/taiwan"
-          class="mt-8 inline-block rounded-full bg-amber-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-amber-500"
+          class="mt-8 inline-block rounded-full bg-amber-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-amber-500 active:scale-[0.98]"
         >
           立即探索 Explore Now
         </NuxtLink>
       </div>
     </section>
 
-    <CategorySection
-      v-for="item in featured"
-      :key="item.category.slug"
-      :category="item.category"
-      :articles="item.articles"
-    />
+    <FeaturedSection :category="taiwan.category" :articles="taiwan.articles" />
+    <CategorySection :category="japan.category" :articles="japan.articles" />
+    <ScrollSection :category="global.category" :articles="global.articles" />
+    <BentoSection :category="food.category" :articles="food.articles" />
   </div>
 </template>

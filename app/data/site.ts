@@ -21,7 +21,7 @@ export const categories: Category[] = [
   { slug: 'global', name: '環球旅遊', nameEn: 'Global', description: '走得更遠一點，用鏡頭收集世界的顏色。' },
   { slug: 'photography', name: '攝影筆記', nameEn: 'Photography', description: '器材、構圖與後製，關於拍照的大小事。' },
   { slug: 'food', name: '美食記錄', nameEn: 'Food', description: '每一趟旅行，都從一頓好吃的開始。' },
-  { slug: 'stay', name: '住宿推薦', nameEn: 'Stay', description: '睡得好，才走得遠 —— 精選住宿分享。' },
+  { slug: 'stay', name: '住宿推薦', nameEn: 'Stay', description: '睡得好，才走得遠，精選住宿分享。' },
   { slug: 'trips', name: '小旅行', nameEn: 'Short Trips', description: '不用出國，也能擁有的週末小旅行。' },
 ]
 
