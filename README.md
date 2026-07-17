@@ -15,7 +15,11 @@ npm install
 npm run dev
 ```
 
-## Build & Deploy
+## Deploy
+
+Deployment is automated via GitHub Actions: every push to `main` runs [`.github/workflows/firebase-hosting-merge.yml`](.github/workflows/firebase-hosting-merge.yml), which builds the static site (`npm run generate`) and deploys `.output/public` to Firebase Hosting (project `daydreamingcouple-1707b`) using the `FIREBASE_SERVICE_ACCOUNT_DAYDREAMINGCOUPLE_1707B` repo secret.
+
+To deploy manually instead:
 
 ```bash
 npm run generate       # outputs static site to .output/public
