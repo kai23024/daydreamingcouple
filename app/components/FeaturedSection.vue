@@ -21,7 +21,7 @@ const rest = props.articles.slice(1)
 
     <div v-if="main" class="grid gap-6 lg:grid-cols-5">
       <NuxtLink
-        :to="`/${main.category}/${main.id}`"
+        :to="`/article/${main.id}`"
         class="group relative block overflow-hidden rounded-2xl lg:col-span-3"
       >
         <img
@@ -48,7 +48,7 @@ const rest = props.articles.slice(1)
         <NuxtLink
           v-for="article in rest"
           :key="article.id"
-          :to="`/${article.category}/${article.id}`"
+          :to="`/article/${article.id}`"
           class="group flex gap-4 overflow-hidden rounded-xl bg-stone-900 p-3 ring-1 ring-stone-800 transition active:scale-[0.98]"
         >
           <img

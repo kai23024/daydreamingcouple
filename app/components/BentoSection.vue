@@ -22,7 +22,7 @@ const small = props.articles.slice(1, 3)
     <div class="grid gap-4 sm:grid-cols-5">
       <div v-if="big" class="sm:col-span-3">
         <NuxtLink
-          :to="`/${big.category}/${big.id}`"
+          :to="`/article/${big.id}`"
           class="group block overflow-hidden rounded-2xl bg-stone-900 shadow-sm ring-1 ring-stone-800 transition active:scale-[0.98]"
         >
           <div class="aspect-[16/10] overflow-hidden bg-stone-800">

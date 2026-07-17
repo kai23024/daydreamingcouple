@@ -6,7 +6,7 @@ defineProps<{ article: Article }>()
 
 <template>
   <NuxtLink
-    :to="`/${article.category}/${article.id}`"
+    :to="`/article/${article.id}`"
     class="group block overflow-hidden rounded-lg bg-stone-900 shadow-sm ring-1 ring-stone-800 transition active:scale-[0.98]"
   >
     <div class="aspect-[4/3] overflow-hidden bg-stone-800">

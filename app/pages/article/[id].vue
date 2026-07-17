@@ -1,18 +1,17 @@
 <script setup lang="ts">
-import { articleById, articlesByCategory, categoryBySlug } from '~/data/site'
+import { articles, articlesByCategory, categoryBySlug } from '~/data/site'
 
 const route = useRoute()
-const categorySlug = route.params.slug as string
-const articleId = route.params.article as string
+const articleId = route.params.id as string
 
-const category = categoryBySlug(categorySlug)
-const article = articleById(categorySlug, articleId)
+const article = articles.find(a => a.id === articleId)
+const category = article ? categoryBySlug(article.category) : undefined
 
-if (!category || !article) {
+if (!article || !category) {
   throw createError({ statusCode: 404, statusMessage: '找不到這篇文章' })
 }
 
-const more = articlesByCategory(categorySlug).filter(a => a.id !== article.id).slice(0, 3)
+const more = articlesByCategory(article.category).filter(a => a.id !== article.id).slice(0, 3)
 
 useHead({ title: `${article.title}｜白日夢情侶檔` })
 </script>
