@@ -9,12 +9,13 @@ const featured = ['taiwan', 'japan', 'global', 'food']
 
 <template>
   <div>
-    <section class="relative overflow-hidden bg-stone-900 text-stone-50">
+    <section class="relative overflow-hidden bg-stone-950 text-stone-50">
       <img
         src="https://picsum.photos/seed/dreamcouple-hero/1600/800"
         alt="旅行風景"
-        class="absolute inset-0 h-full w-full object-cover opacity-50"
+        class="absolute inset-0 h-full w-full object-cover opacity-40"
       >
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/10" />
       <div class="relative mx-auto flex max-w-6xl flex-col items-start px-5 py-28">
         <p class="text-xs uppercase tracking-[0.3em] text-amber-200">Daydreaming Couple</p>
         <h1 class="mt-4 max-w-xl font-serif text-4xl leading-tight sm:text-5xl">
