@@ -11,7 +11,7 @@ defineProps<{ article: Article }>()
   >
     <div class="aspect-[4/3] overflow-hidden bg-stone-800">
       <img
-        :src="`https://picsum.photos/seed/${article.seed}/640/480`"
+        :src="article.hero || `https://picsum.photos/seed/${article.seed}/640/480`"
         :alt="article.title"
         loading="lazy"
         class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"

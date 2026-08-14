@@ -20,7 +20,7 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
   <div>
     <div class="aspect-[16/9] w-full overflow-hidden bg-stone-900 sm:aspect-[21/9]">
       <img
-        :src="`https://picsum.photos/seed/${article.seed}/1600/800`"
+        :src="article.hero || `https://picsum.photos/seed/${article.seed}/1600/800`"
         :alt="article.title"
         class="h-full w-full object-cover opacity-90"
       >
