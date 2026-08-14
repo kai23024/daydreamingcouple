@@ -39,9 +39,23 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
       </h1>
 
       <div class="mt-8 space-y-5 leading-relaxed text-stone-300">
-        <p v-for="(paragraph, i) in article.body" :key="i">
-          {{ paragraph }}
-        </p>
+        <template v-for="(block, i) in article.body" :key="i">
+          <p v-if="typeof block === 'string'">{{ block }}</p>
+          <div
+            v-else
+            class="grid gap-3 overflow-hidden rounded-lg"
+            :class="block.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'"
+          >
+            <img
+              v-for="(src, j) in block.images"
+              :key="j"
+              :src="src"
+              :alt="article.title"
+              loading="lazy"
+              class="h-full w-full rounded-lg object-cover"
+            >
+          </div>
+        </template>
       </div>
     </div>
 
