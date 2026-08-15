@@ -18,27 +18,27 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
 
 <template>
   <div>
-    <div class="aspect-[16/9] w-full overflow-hidden bg-stone-900 sm:aspect-[21/9]">
+    <div class="aspect-[16/9] w-full overflow-hidden bg-morandi-100 sm:aspect-[21/9]">
       <img
         :src="article.hero || `https://picsum.photos/seed/${article.seed}/1600/800`"
         :alt="article.title"
-        class="h-full w-full object-cover opacity-90"
+        class="h-full w-full object-cover"
       >
     </div>
 
     <div class="mx-auto max-w-3xl px-5 py-10">
-      <NuxtLink :to="`/${category.slug}`" class="text-sm text-amber-400 hover:underline">
+      <NuxtLink :to="`/${category.slug}`" class="text-sm text-clay-600 hover:underline">
         ← {{ category.name }}
       </NuxtLink>
 
-      <p class="mt-4 text-xs text-stone-500">
+      <p class="mt-4 text-xs text-morandi-400">
         <span v-if="article.location">{{ article.location }} ・ </span>{{ article.date }}
       </p>
-      <h1 class="mt-2 font-serif text-3xl leading-snug text-stone-100 sm:text-4xl">
+      <h1 class="mt-2 font-serif text-3xl leading-snug text-morandi-900 sm:text-4xl">
         {{ article.title }}
       </h1>
 
-      <div class="mt-8 space-y-5 leading-relaxed text-stone-300">
+      <div class="mt-8 space-y-5 leading-relaxed text-morandi-700">
         <template v-for="(block, i) in article.body" :key="i">
           <p v-if="typeof block === 'string'">{{ block }}</p>
           <div
@@ -59,9 +59,9 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
       </div>
     </div>
 
-    <div v-if="more.length" class="border-t border-stone-800 bg-stone-900/40">
+    <div v-if="more.length" class="border-t border-morandi-200 bg-morandi-100/40">
       <div class="mx-auto max-w-6xl px-5 py-12">
-        <h2 class="mb-6 font-serif text-xl text-stone-100">更多{{ category.name }}</h2>
+        <h2 class="mb-6 font-serif text-xl text-morandi-900">更多{{ category.name }}</h2>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <ArticleCard v-for="a in more" :key="a.id" :article="a" />
         </div>

@@ -4,15 +4,15 @@ useHead({ title: '關於．我們US｜白日夢情侶檔' })
 
 <template>
   <div class="mx-auto max-w-3xl px-5 py-16">
-    <h1 class="font-serif text-3xl text-stone-100">關於．我們US</h1>
+    <h1 class="font-serif text-3xl text-morandi-900">關於．我們US</h1>
 
     <img
       src="https://picsum.photos/seed/dreamcouple-about/1000/560"
       alt="關於．我們US"
-      class="mt-8 w-full rounded-lg object-cover opacity-90"
+      class="mt-8 w-full rounded-lg object-cover"
     >
 
-    <div class="mt-8 space-y-5 leading-relaxed text-stone-300">
+    <div class="mt-8 space-y-5 leading-relaxed text-morandi-700">
       <p>
         我們是一對喜歡到處走走、拍拍照、吃吃喝喝的情侶。從台灣的山城小鎮，到日本的四季風景，再到世界各地的陌生街角，
         每一趟旅程都想把看見的光、聞到的味道，好好記錄下來。
@@ -24,8 +24,8 @@ useHead({ title: '關於．我們US｜白日夢情侶檔' })
       <p>謝謝你路過我們的白日夢。</p>
     </div>
 
-    <div class="mt-10 rounded-lg bg-stone-900 p-6 text-sm text-stone-400">
-      <p class="font-medium text-stone-200">聯絡方式</p>
+    <div class="mt-10 rounded-lg bg-morandi-100 p-6 text-sm text-morandi-500">
+      <p class="font-medium text-morandi-800">聯絡方式</p>
       <p class="mt-2">Email：hello@daydreamingcouple.example</p>
       <p>Instagram：@daydreaming.couple</p>
     </div>

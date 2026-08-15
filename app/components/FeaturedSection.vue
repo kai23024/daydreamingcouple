@@ -11,10 +11,10 @@ const rest = props.articles.slice(1)
   <section class="mx-auto max-w-6xl px-5 py-12">
     <div class="mb-6 flex flex-wrap items-end justify-between gap-2">
       <div>
-        <h2 class="font-serif text-2xl text-stone-100">{{ category.name }}</h2>
-        <p class="mt-1 text-sm text-stone-400">{{ category.description }}</p>
+        <h2 class="font-serif text-2xl text-morandi-900">{{ category.name }}</h2>
+        <p class="mt-1 text-sm text-morandi-500">{{ category.description }}</p>
       </div>
-      <NuxtLink :to="`/${category.slug}`" class="text-sm text-amber-400 hover:underline">
+      <NuxtLink :to="`/${category.slug}`" class="text-sm text-clay-600 hover:underline">
         查看全部 →
       </NuxtLink>
     </div>
@@ -30,15 +30,15 @@ const rest = props.articles.slice(1)
           loading="lazy"
           class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105 lg:aspect-auto lg:h-full"
         >
-        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/30 to-transparent" />
+        <div class="absolute inset-0 bg-gradient-to-t from-morandi-950 via-morandi-950/30 to-transparent" />
         <div class="absolute inset-x-0 bottom-0 p-6">
-          <p class="text-xs text-stone-300">
+          <p class="text-xs text-morandi-200">
             <span v-if="main.location">{{ main.location }} ・ </span>{{ main.date }}
           </p>
-          <h3 class="mt-1 font-serif text-2xl leading-snug text-stone-50 group-hover:text-amber-400">
+          <h3 class="mt-1 font-serif text-2xl leading-snug text-morandi-50 group-hover:text-clay-200">
             {{ main.title }}
           </h3>
-          <p class="mt-2 max-w-md text-sm leading-relaxed text-stone-300">
+          <p class="mt-2 max-w-md text-sm leading-relaxed text-morandi-200">
             {{ main.excerpt }}
           </p>
         </div>
@@ -49,7 +49,7 @@ const rest = props.articles.slice(1)
           v-for="article in rest"
           :key="article.id"
           :to="`/article/${article.id}`"
-          class="group flex gap-4 overflow-hidden rounded-xl bg-stone-900 p-3 ring-1 ring-stone-800 transition active:scale-[0.98]"
+          class="group flex gap-4 overflow-hidden rounded-xl bg-morandi-100 p-3 ring-1 ring-morandi-200 transition active:scale-[0.98]"
         >
           <img
             :src="`https://picsum.photos/seed/${article.seed}/200/200`"
@@ -58,13 +58,13 @@ const rest = props.articles.slice(1)
             class="h-20 w-20 shrink-0 rounded-lg object-cover"
           >
           <div class="min-w-0">
-            <p class="text-xs text-stone-500">
+            <p class="text-xs text-morandi-400">
               <span v-if="article.location">{{ article.location }} ・ </span>{{ article.date }}
             </p>
-            <h3 class="mt-1 truncate font-serif text-base text-stone-100 group-hover:text-amber-400">
+            <h3 class="mt-1 truncate font-serif text-base text-morandi-900 group-hover:text-clay-600">
               {{ article.title }}
             </h3>
-            <p class="mt-1 line-clamp-2 text-xs leading-relaxed text-stone-400">
+            <p class="mt-1 line-clamp-2 text-xs leading-relaxed text-morandi-500">
               {{ article.excerpt }}
             </p>
           </div>

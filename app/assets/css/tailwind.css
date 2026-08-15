@@ -19,6 +19,6 @@
 
   *:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px theme('colors.stone.950'), 0 0 0 4px theme('colors.amber.400');
+    box-shadow: 0 0 0 2px theme('colors.morandi.50'), 0 0 0 4px theme('colors.clay.600');
   }
 }
