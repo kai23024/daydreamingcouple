@@ -17,8 +17,7 @@ useHead({ title: `${category.name}｜白日夢情侶檔` })
 <template>
   <div class="mx-auto max-w-6xl px-5 py-12">
     <header class="mb-10 border-b border-stone-800 pb-6">
-      <p class="text-xs uppercase tracking-[0.2em] text-amber-400">{{ category.nameEn }}</p>
-      <h1 class="mt-2 font-serif text-3xl text-stone-100">{{ category.name }}</h1>
+      <h1 class="font-serif text-3xl text-stone-100">{{ category.name }}</h1>
       <p class="mt-2 text-stone-400">{{ category.description }}</p>
     </header>
 

@@ -5,7 +5,7 @@ const open = ref(false)
 
 const navLinks = [
   ...categories.map(c => ({ to: `/${c.slug}`, label: c.name })),
-  { to: '/about', label: '關於我們' },
+  { to: '/about', label: '關於．我們US' },
 ]
 </script>
 

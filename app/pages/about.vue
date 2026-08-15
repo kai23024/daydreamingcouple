@@ -1,15 +1,14 @@
 <script setup lang="ts">
-useHead({ title: '關於我們｜白日夢情侶檔' })
+useHead({ title: '關於．我們US｜白日夢情侶檔' })
 </script>
 
 <template>
   <div class="mx-auto max-w-3xl px-5 py-16">
-    <p class="text-xs uppercase tracking-[0.2em] text-amber-400">About Us</p>
-    <h1 class="mt-2 font-serif text-3xl text-stone-100">關於我們</h1>
+    <h1 class="font-serif text-3xl text-stone-100">關於．我們US</h1>
 
     <img
       src="https://picsum.photos/seed/dreamcouple-about/1000/560"
-      alt="關於我們"
+      alt="關於．我們US"
       class="mt-8 w-full rounded-lg object-cover opacity-90"
     >
 

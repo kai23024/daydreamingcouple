@@ -23,13 +23,13 @@ export interface Article {
 }
 
 export const categories: Category[] = [
-  { slug: 'taiwan', name: '台灣旅遊', nameEn: 'Taiwan', description: '從山城到海岸，記錄島嶼上最動人的風景。' },
-  { slug: 'japan', name: '日本旅遊', nameEn: 'Japan', description: '四季分明的日本，總有拍不完的畫面。' },
-  { slug: 'global', name: '環球旅遊', nameEn: 'Global', description: '走得更遠一點，用鏡頭收集世界的顏色。' },
-  { slug: 'photography', name: '攝影筆記', nameEn: 'Photography', description: '器材、構圖與後製，關於拍照的大小事。' },
-  { slug: 'food', name: '美食記錄', nameEn: 'Food', description: '每一趟旅行，都從一頓好吃的開始。' },
-  { slug: 'stay', name: '住宿推薦', nameEn: 'Stay', description: '睡得好，才走得遠，精選住宿分享。' },
-  { slug: 'trips', name: '小旅行', nameEn: 'Short Trips', description: '不用出國，也能擁有的週末小旅行。' },
+  { slug: 'taiwan', name: '走過．台灣TAIWAN', nameEn: 'Taiwan', description: '從山城到海岸，記錄島嶼上最動人的風景。' },
+  { slug: 'japan', name: '走過．日本JAPAN', nameEn: 'Japan', description: '四季分明的日本，總有拍不完的畫面。' },
+  { slug: 'global', name: '走過．世界GLOBAL', nameEn: 'Global', description: '走得更遠一點，用鏡頭收集世界的顏色。' },
+  { slug: 'photography', name: '攝影．筆記PHOTOGRAPHY', nameEn: 'Photography', description: '器材、構圖與後製，關於拍照的大小事。' },
+  { slug: 'food', name: '食光．紀錄FOOD', nameEn: 'Food', description: '每一趟旅行，都從一頓好吃的開始。' },
+  { slug: 'stay', name: '旅宿．回憶HOTEL', nameEn: 'Stay', description: '睡得好，才走得遠，精選住宿分享。' },
+  { slug: 'trips', name: '短途．旅程JOURNEY', nameEn: 'Short Trips', description: '不用出國，也能擁有的週末小旅行。' },
 ]
 
 export const articles: Article[] = [
