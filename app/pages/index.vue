@@ -3,10 +3,13 @@ import { articlesByCategory, categoryBySlug } from '~/data/site'
 
 useHead({ title: '白日夢情侶檔｜Daydreaming Couple' })
 
-const taiwan = { category: categoryBySlug('taiwan')!, articles: articlesByCategory('taiwan').slice(0, 3) }
-const japan = { category: categoryBySlug('japan')!, articles: articlesByCategory('japan').slice(0, 3) }
-const global = { category: categoryBySlug('global')!, articles: articlesByCategory('global').slice(0, 3) }
-const food = { category: categoryBySlug('food')!, articles: articlesByCategory('food').slice(0, 3) }
+const latestByCategory = (slug: string) =>
+  articlesByCategory(slug).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
+
+const taiwan = { category: categoryBySlug('taiwan')!, articles: latestByCategory('taiwan') }
+const japan = { category: categoryBySlug('japan')!, articles: latestByCategory('japan') }
+const global = { category: categoryBySlug('global')!, articles: latestByCategory('global') }
+const food = { category: categoryBySlug('food')!, articles: latestByCategory('food') }
 </script>
 
 <template>
@@ -35,9 +38,9 @@ const food = { category: categoryBySlug('food')!, articles: articlesByCategory('
       </div>
     </section>
 
-    <FeaturedSection :category="taiwan.category" :articles="taiwan.articles" />
+    <CategorySection :category="taiwan.category" :articles="taiwan.articles" />
     <CategorySection :category="japan.category" :articles="japan.articles" />
-    <ScrollSection :category="global.category" :articles="global.articles" />
-    <BentoSection :category="food.category" :articles="food.articles" />
+    <CategorySection :category="global.category" :articles="global.articles" />
+    <CategorySection :category="food.category" :articles="food.articles" />
   </div>
 </template>
