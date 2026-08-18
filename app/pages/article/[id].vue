@@ -41,6 +41,12 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
       <div class="mt-8 space-y-5 leading-relaxed text-morandi-700">
         <template v-for="(block, i) in article.body" :key="i">
           <p v-if="typeof block === 'string'">{{ block }}</p>
+          <p
+            v-else-if="'caption' in block"
+            class="inline-block rounded bg-morandi-200 px-2 py-1 text-xs text-morandi-600"
+          >
+            {{ block.caption }}
+          </p>
           <div
             v-else
             class="grid gap-3 overflow-hidden rounded-lg"
