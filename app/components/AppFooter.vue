@@ -14,8 +14,13 @@ const year = new Date().getFullYear()
         </div>
         <div>
           <p class="mb-2 font-medium text-morandi-800">聯絡我們</p>
-          <p>Email：hello@daydreamingcouple.example</p>
-          <p>Instagram：@daydreaming.couple</p>
+          <p>Email：kai23024@gmail.com</p>
+          <p>
+            Instagram：
+            <a href="https://www.instagram.com/tw.traveler.eason" target="_blank" rel="noopener" class="hover:text-clay-600 hover:underline">tw.traveler.eason</a>
+            、
+            <a href="https://www.instagram.com/daydreaming_couple" target="_blank" rel="noopener" class="hover:text-clay-600 hover:underline">daydreaming.couple</a>
+          </p>
         </div>
         <div>
           <p class="mb-2 font-medium text-morandi-800">關於這個網站</p>
