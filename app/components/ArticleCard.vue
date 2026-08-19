@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Article } from '~/data/site'
+import { articleExcerpt, type Article } from '~/data/site'
 
 defineProps<{ article: Article }>()
 </script>
@@ -24,8 +24,8 @@ defineProps<{ article: Article }>()
       <h3 class="mt-1 font-serif text-lg leading-snug text-morandi-900 group-hover:text-clay-600">
         {{ article.title }}
       </h3>
-      <p class="mt-2 text-sm leading-relaxed text-morandi-500">
-        {{ article.excerpt }}
+      <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-morandi-500">
+        {{ articleExcerpt(article) }}
       </p>
     </div>
   </NuxtLink>
