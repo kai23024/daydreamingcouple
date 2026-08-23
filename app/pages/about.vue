@@ -8,7 +8,7 @@ useHead({ title: '關於．我們US｜白日夢情侶檔' })
     <p class="mt-3 text-lg text-morandi-500">當「數字控」遇上「感性控」：一場把白日夢變成現實的冒險！</p>
 
     <img
-      src="https://picsum.photos/seed/dreamcouple-about/1000/560"
+      src="/images/about/DSC01731.jpg"
       alt="關於．我們US"
       class="mt-8 w-full rounded-lg object-cover"
     >
