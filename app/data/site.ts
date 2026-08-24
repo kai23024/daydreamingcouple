@@ -94,7 +94,7 @@ export const articles: Article[] = [
     category: 'taiwan',
     title: '【九份濂洞國小】走進日系動畫的浪漫！收服彩色溜滑梯與陰陽海絕景',
     date: '2026-01-22',
-    location: '新北・金瓜石',
+    location: '新北・九份',
     seed: 'liandongelementary',
     hero: '/images/liandong-elementary/DSC09868.jpg',
     body: [
@@ -352,7 +352,7 @@ export const articles: Article[] = [
   {
     id: 'seoul-tower',
     category: 'global',
-    title: '📷🌸【首爾賞櫻】首爾塔櫻花拍攝攻略｜南山公園賞櫻拍照點＋纜車交通整理',
+    title: '【首爾賞櫻】首爾塔櫻花拍攝攻略｜南山公園賞櫻拍照點＋纜車交通整理',
     date: '2026-04-02',
     location: '首爾・南山',
     seed: 'nseoultower',
