@@ -3,9 +3,15 @@ import { categories } from '~/data/site'
 
 const open = ref(false)
 
+// 分類名稱格式為「中文．中文ENGLISH」，取尾端連續大寫字母當作英文行，其餘當中文行
+function splitLabel(label: string) {
+  const match = label.match(/^(.*?)([A-Z]+)$/)
+  return match ? { zh: match[1], en: match[2] } : { zh: label, en: '' }
+}
+
 const navLinks = [
-  ...categories.map(c => ({ to: `/${c.slug}`, label: c.name })),
-  { to: '/about', label: '關於．我們US' },
+  ...categories.map(c => ({ to: `/${c.slug}`, label: c.name, ...splitLabel(c.name) })),
+  { to: '/about', label: '關於．我們US', ...splitLabel('關於．我們US') },
 ]
 </script>
 
@@ -17,15 +23,16 @@ const navLinks = [
         <span class="hidden text-xs uppercase tracking-[0.2em] text-morandi-400 sm:inline">Daydreaming Couple</span>
       </NuxtLink>
 
-      <nav class="hidden flex-wrap justify-end gap-x-6 gap-y-2 lg:flex">
+      <nav class="hidden flex-nowrap items-start gap-x-4 lg:flex">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.to"
           :to="link.to"
-          class="whitespace-nowrap text-sm text-morandi-500 transition hover:text-clay-600"
+          class="flex shrink-0 flex-col items-center whitespace-nowrap text-morandi-500 transition hover:text-clay-600"
           active-class="text-clay-600 font-medium"
         >
-          {{ link.label }}
+          <span class="text-sm">{{ link.zh }}</span>
+          <span class="text-[10px] tracking-wide text-morandi-400">{{ link.en }}</span>
         </NuxtLink>
       </nav>
 
