@@ -18,12 +18,12 @@ const navLinks = [
 <template>
   <header class="sticky top-0 z-50 border-b border-morandi-200 bg-morandi-50/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-y-2 px-5 py-4">
-      <NuxtLink to="/" class="flex shrink-0 items-center gap-2 whitespace-nowrap" @click="open = false">
+      <NuxtLink to="/" class="flex shrink-0 flex-col items-start whitespace-nowrap" @click="open = false">
         <span class="text-xl font-serif tracking-wide text-morandi-900">白日夢情侶檔</span>
-        <span class="hidden text-xs uppercase tracking-[0.2em] text-morandi-400 sm:inline">Daydreaming Couple</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-morandi-400">Daydreaming Couple</span>
       </NuxtLink>
 
-      <nav class="hidden flex-nowrap items-start gap-x-4 lg:flex">
+      <nav class="hidden flex-nowrap items-start gap-x-5 lg:flex">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.to"
@@ -31,8 +31,8 @@ const navLinks = [
           class="flex shrink-0 flex-col items-center whitespace-nowrap text-morandi-500 transition hover:text-clay-600"
           active-class="text-clay-600 font-medium"
         >
-          <span class="text-sm">{{ link.zh }}</span>
-          <span class="text-[10px] tracking-wide text-morandi-400">{{ link.en }}</span>
+          <span class="text-base">{{ link.zh }}</span>
+          <span class="text-xs tracking-wide text-morandi-400">{{ link.en }}</span>
         </NuxtLink>
       </nav>
 
