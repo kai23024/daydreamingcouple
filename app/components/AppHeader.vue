@@ -22,7 +22,7 @@ const navLinks = [
           v-for="link in navLinks"
           :key="link.to"
           :to="link.to"
-          class="text-sm text-morandi-500 transition hover:text-clay-600"
+          class="whitespace-nowrap text-sm text-morandi-500 transition hover:text-clay-600"
           active-class="text-clay-600 font-medium"
         >
           {{ link.label }}
