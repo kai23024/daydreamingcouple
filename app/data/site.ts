@@ -86,7 +86,7 @@ export const articles: Article[] = [
       '天氣先決： 瑞芳、雙溪一帶山區天氣多變，出發前請務必事先查詢天氣預報，避開下雨或起大霧的日子，以免上山只有白茫茫的一片。',
       '銀河追星限定： 如果目標是拍攝璀璨的銀河，請記得不能選擇月圓或接近月圓的時間前來。月光太亮會掩蓋星光，建議選擇農曆初一前後（新月期間）的晴朗夜空，才能拍出最純淨的滿天星斗。',
       '保暖與防蚊： 不厭亭位於山脊稜線，傍晚過後風勢通常非常強勁且溫度驟降，即便是夏天也建議多帶一件防風外套喔！',
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -128,7 +128,7 @@ export const articles: Article[] = [
       '拍照美感度： ★★★★★（山海階梯與彩色溜滑梯真的非常好殺記憶卡！）',
       '交通便利度： ★☆☆☆☆（山區道路較狹窄，假日開車與停車需要多點耐心）',
       '放鬆舒適度： ★★★☆☆（看著陰陽海吹海風，身心非常療癒，但夏天很曝曬）',
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -188,7 +188,7 @@ export const articles: Article[] = [
       { heading: '白日夢小提醒：', level: 2 },
       '防曬與防風：因為報時山步道完全無遮蔭，山上的紫外線跟小黑蚊都沒在客氣的，夏季前往務必做好防曬、防蚊與補充水分。',
       '步道行走安全：因為山城的樓梯跟陡坡較多，而且雖然報時山步道平緩，但階梯雨天容易濕滑，所以建議收起高跟鞋、穿著舒適的球鞋，才能開開心心地完成這趟小旅行唷！',
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -238,7 +238,7 @@ export const articles: Article[] = [
       '回訪意願： ★★★★☆（比起一般的公園，這裡多了一份讓人沉靜的知性美）',
       '白日夢情侶檔小叮嚀： 因為東京大學本鄉校區至今仍是學生與教授上課研究的地方，大家若是平日前往拍照時，記得放低音量一起守護校園的寧靜唷！',
       { images: ['/images/ginkgo-utokyo/DSC08420.jpg'] },
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -291,7 +291,7 @@ export const articles: Article[] = [
       '回訪意願： ★★★★★（每年冬天只要來到東京，都想再來這裡被浪漫一次）',
       '白日夢情侶檔小叮嚀： 為了拍出美照，大家有時候會想走到馬路中央。但因為六本木車流量大，請務必嚴格遵守紅綠燈秒數與現場警衛的指引，安全第一！另外，冬天的東京入夜後氣溫下降極快，記得準備好暖暖包和防風外套，千萬別讓寒風吹壞好心情唷！',
       { images: ['/images/roppongi-lights/DSC08722.jpg'] },
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -346,7 +346,7 @@ export const articles: Article[] = [
       '體力消耗： ★★☆☆☆（市中心地鐵直達，出站走幾分鐘就到，約會完全不狼狽）',
       '回訪意願： ★★★★★（秋天去東京如果沒來這裡，真的會留下遺憾！）',
       { images: ['/images/meiji-jingu-ginkgo/DSC08664.jpg'] },
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -413,7 +413,7 @@ export const articles: Article[] = [
       '好拍程度： ★★★★★（首爾塔與櫻花交織，是立於不敗之地的經典畫面）',
       '體力消耗： ★★☆☆☆（選擇纜車上山的話還算輕鬆）',
       '回訪意願： ★★☆☆☆（櫻花季首爾美景太多了，必須先去開發新景點拉～）',
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -469,7 +469,7 @@ export const articles: Article[] = [
       '小撇步： 建議帶上一張野餐墊，拍累了就躺在櫻花樹下發呆，這才是最道地的首爾賞櫻方式！',
       { images: ['/images/seoul-forest/DSC07068.jpg'] },
       { caption: 'α7C II+FE 70-200mm F4 G2 l ISO 640, 200mm, F4, 1/200s' },
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -536,7 +536,7 @@ export const articles: Article[] = [
       '回訪意願： ★★★★★',
       { images: ['/images/kyunghee-univ/DSC06980.jpg'] },
       { caption: 'α7C II+FE 70-200mm F4 G2 l ISO 100, 70mm, F8, 1/200s' },
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -592,7 +592,7 @@ export const articles: Article[] = [
       '好拍程度 ⭐⭐⭐⭐⭐（絕美的港口與遺世獨立足球場大景，有手就能出美照！）',
       '體力消耗 ⭐☆☆☆☆（小鎮內部道路全程平坦，輕鬆散步即可走完主要景點~）',
       '回訪意願 ⭐⭐⭐⭐⭐（什麼都不做的坐在港口欣賞風景都超療癒！）',
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
@@ -716,7 +716,7 @@ export const articles: Article[] = [
       '整體來說，「弘\'s 小章魚」是一間視覺與味覺都超級滿足的店。那香辣的後勁跟嗶嗶啵啵的炒飯鍋巴，是我下次去首爾絕對會再回訪的口袋名單！',
       '⚠️ 溫馨預警（這家店不適合誰？）：',
       '這家店的主餐「非常有辣度」，微辣廢物吃起來會需要一直狂灌水。如果你是連一點點辣都完全無法接受的「絕對零辣度族群」，或是討厭排隊、無法接受紫蘇葉特殊氣味的朋友，那這家店可能就要稍微斟酌一下囉！',
-      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreamimg_couple，看更多美照和旅遊攝影資訊分享喔！',
+      '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
     ],
   },
   {
