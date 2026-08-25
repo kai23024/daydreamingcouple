@@ -19,8 +19,8 @@ const navLinks = [
   <header class="sticky top-0 z-50 border-b border-morandi-200 bg-morandi-50/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-y-2 px-5 py-4">
       <NuxtLink to="/" class="flex shrink-0 flex-col items-center whitespace-nowrap" @click="open = false">
-        <span class="font-serif text-xl tracking-wide text-morandi-900">白日夢情侶檔</span>
-        <span class="font-serif text-xs uppercase tracking-[0.2em] text-morandi-400">Daydreaming Couple</span>
+        <span class="text-xl tracking-wide text-morandi-900">白日夢情侶檔</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-morandi-400">Daydreaming Couple</span>
       </NuxtLink>
 
       <nav class="hidden flex-nowrap items-start gap-x-5 lg:flex">
