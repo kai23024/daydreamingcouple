@@ -542,7 +542,7 @@ export const articles: Article[] = [
   {
     id: 'henningsvaer',
     category: 'global',
-    title: '角落亨寧斯維爾（Henningsvær）漫遊指南：羅浮敦群島的明信片',
+    title: '亨寧斯維爾（Henningsvær）漫遊指南：羅浮敦群島的明信片',
     date: '2026-08-25',
     location: '羅浮敦群島・亨寧斯維爾',
     seed: 'henningsvaer',
