@@ -8,7 +8,9 @@ const logoChars = '白日夢情侶檔'.split('')
 // 分類名稱格式為「中文．中文ENGLISH」，取尾端連續大寫字母當作英文行，其餘當中文行
 function splitLabel(label: string) {
   const match = label.match(/^(.*?)([A-Z]+)$/)
-  return match ? { zh: match[1], en: match[2] } : { zh: label, en: '' }
+  if (!match) return { zh: label, en: '' }
+  const en = match[2]
+  return { zh: match[1], en: en.charAt(0) + en.slice(1).toLowerCase() }
 }
 
 const navLinks = [
@@ -24,7 +26,7 @@ const navLinks = [
         <span class="flex justify-between text-xl text-morandi-900">
           <span v-for="(ch, i) in logoChars" :key="i">{{ ch }}</span>
         </span>
-        <span class="text-xs uppercase tracking-[0.2em] text-morandi-400">Daydreaming Couple</span>
+        <span class="font-script text-base text-morandi-400">Daydreaming Couple</span>
       </NuxtLink>
 
       <nav class="hidden flex-nowrap items-start gap-x-5 lg:flex">
@@ -36,7 +38,7 @@ const navLinks = [
           active-class="text-clay-600 font-medium"
         >
           <span class="text-base">{{ link.zh }}</span>
-          <span class="text-xs tracking-wide text-morandi-400">{{ link.en }}</span>
+          <span class="font-script text-sm text-morandi-400">{{ link.en }}</span>
         </NuxtLink>
       </nav>
 

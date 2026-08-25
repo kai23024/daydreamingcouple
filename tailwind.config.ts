@@ -5,7 +5,8 @@ export default <Partial<Config>>{
     extend: {
       fontFamily: {
         sans: ['"Noto Sans TC"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['"Noto Serif TC"', 'ui-serif', 'Georgia', 'serif']
+        serif: ['"Noto Serif TC"', 'ui-serif', 'Georgia', 'serif'],
+        script: ['"Yellowtail"', 'cursive']
       },
       colors: {
         morandi: {
