@@ -7,7 +7,7 @@ const year = new Date().getFullYear()
     <div class="mx-auto max-w-6xl px-5 py-10 text-sm text-morandi-500">
       <div class="grid gap-8 sm:grid-cols-3">
         <div>
-          <p class="font-serif text-lg text-morandi-900">白日夢情侶檔</p>
+          <p class="text-lg text-morandi-900">白日夢情侶檔</p>
           <p class="mt-2 leading-relaxed">
             走過的路、拍下的畫面，都是我們生活裡最珍貴的紀錄。
           </p>

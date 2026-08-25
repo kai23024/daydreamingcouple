@@ -23,7 +23,7 @@ const food = { category: categoryBySlug('food')!, articles: latestByCategory('fo
       <div class="absolute inset-0 bg-gradient-to-t from-morandi-950 via-morandi-950/40 to-morandi-950/10" />
       <div class="relative mx-auto flex max-w-6xl flex-col items-start px-5 py-28">
         <p class="text-xs uppercase tracking-[0.3em] text-clay-200">Daydreaming Couple</p>
-        <h1 class="mt-4 max-w-xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+        <h1 class="mt-4 max-w-xl text-4xl leading-tight tracking-tight sm:text-5xl">
           走過的路，拍下的光<br>都是生活裡最柔軟的收藏
         </h1>
         <p class="mt-4 max-w-md text-morandi-200">

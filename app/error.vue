@@ -11,8 +11,8 @@ useHead({ title: '找不到頁面｜白日夢情侶檔' })
     <AppHeader />
     <main class="flex flex-1 items-center justify-center px-5 py-24">
       <div class="text-center">
-        <p class="font-serif text-6xl text-morandi-300">{{ error.statusCode }}</p>
-        <h1 class="mt-4 font-serif text-2xl text-morandi-900">
+        <p class="text-6xl text-morandi-300">{{ error.statusCode }}</p>
+        <h1 class="mt-4 text-2xl text-morandi-900">
           這個頁面像迷路的旅人一樣，不見了
         </h1>
         <p class="mt-2 text-morandi-500">

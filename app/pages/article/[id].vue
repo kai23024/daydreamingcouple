@@ -34,7 +34,7 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
       <p class="mt-4 text-xs text-morandi-400">
         <span v-if="article.location">{{ article.location }} ・ </span>{{ article.date }}
       </p>
-      <h1 class="mt-2 font-serif text-3xl leading-snug text-morandi-900 sm:text-4xl">
+      <h1 class="mt-2 text-3xl leading-snug text-morandi-900 sm:text-4xl">
         {{ article.title }}
       </h1>
 
@@ -74,7 +74,7 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
 
     <div v-if="more.length" class="border-t border-morandi-200 bg-morandi-100/40">
       <div class="mx-auto max-w-6xl px-5 py-12">
-        <h2 class="mb-6 font-serif text-xl text-morandi-900">更多{{ category.name }}</h2>
+        <h2 class="mb-6 text-xl text-morandi-900">更多{{ category.name }}</h2>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <ArticleCard v-for="a in more" :key="a.id" :article="a" />
         </div>

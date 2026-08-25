@@ -21,7 +21,7 @@ defineProps<{ article: Article }>()
       <p class="text-xs text-morandi-400">
         <span v-if="article.location">{{ article.location }} ・ </span>{{ article.date }}
       </p>
-      <h3 class="mt-1 font-serif text-lg leading-snug text-morandi-900 group-hover:text-clay-600">
+      <h3 class="mt-1 text-lg leading-snug text-morandi-900 group-hover:text-clay-600">
         {{ article.title }}
       </h3>
       <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-morandi-500">
