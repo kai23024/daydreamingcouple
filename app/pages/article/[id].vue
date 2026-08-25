@@ -34,7 +34,7 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
       <p class="mt-4 text-xs text-morandi-400">
         <span v-if="article.location">{{ article.location }} ・ </span>{{ article.date }}
       </p>
-      <h1 class="mt-2 text-3xl leading-snug text-morandi-900 sm:text-4xl">
+      <h1 class="mt-2 font-serif text-3xl leading-snug text-morandi-900 sm:text-4xl">
         {{ article.title }}
       </h1>
 
