@@ -3,6 +3,8 @@ import { categories } from '~/data/site'
 
 const open = ref(false)
 
+const logoChars = '白日夢情侶檔'.split('')
+
 // 分類名稱格式為「中文．中文ENGLISH」，取尾端連續大寫字母當作英文行，其餘當中文行
 function splitLabel(label: string) {
   const match = label.match(/^(.*?)([A-Z]+)$/)
@@ -18,8 +20,10 @@ const navLinks = [
 <template>
   <header class="sticky top-0 z-50 border-b border-morandi-200 bg-morandi-50/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-y-2 px-5 py-4">
-      <NuxtLink to="/" class="flex shrink-0 flex-col items-center whitespace-nowrap" @click="open = false">
-        <span class="text-xl tracking-wide text-morandi-900">白日夢情侶檔</span>
+      <NuxtLink to="/" class="flex shrink-0 flex-col items-stretch whitespace-nowrap" @click="open = false">
+        <span class="flex justify-between text-xl text-morandi-900">
+          <span v-for="(ch, i) in logoChars" :key="i">{{ ch }}</span>
+        </span>
         <span class="text-xs uppercase tracking-[0.2em] text-morandi-400">Daydreaming Couple</span>
       </NuxtLink>
 
