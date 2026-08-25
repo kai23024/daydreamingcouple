@@ -6,7 +6,8 @@ export default <Partial<Config>>{
       fontFamily: {
         sans: ['"Noto Sans TC"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['"Noto Serif TC"', 'ui-serif', 'Georgia', 'serif'],
-        script: ['"Yellowtail"', 'cursive']
+        script: ['"Yellowtail"', 'cursive'],
+        hand: ['"ChenYuluoyan"', '"Noto Sans TC"', 'cursive']
       },
       colors: {
         morandi: {
