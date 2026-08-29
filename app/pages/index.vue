@@ -22,11 +22,11 @@ const food = { category: categoryBySlug('food')!, articles: latestByCategory('fo
       >
       <div class="absolute inset-0 bg-gradient-to-t from-morandi-950 via-morandi-950/40 to-morandi-950/10" />
       <div class="relative mx-auto flex max-w-6xl flex-col items-start px-5 py-28">
-        <p class="font-hand text-lg tracking-[0.1em] text-clay-200">光影與味蕾的世界漫遊</p>
+        <p class="font-hand text-base leading-tight tracking-tight text-nowrap text-clay-200 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">光影與味蕾的世界漫遊</p>
         <h1 class="font-hand mt-4 text-base leading-tight tracking-tight text-nowrap sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
           用鏡頭定格景色溫度，用舌尖收藏生活光芒
         </h1>
-        <p class="mt-4 max-w-md text-morandi-200">
+        <p class="mt-4 max-w-md text-morandi-200 lg:max-w-none lg:text-nowrap">
           我們是一對熱愛踏尋風景與巷弄美食的情侶，希望能為你的下一段旅程與餐桌尋味，提供最溫暖的靈感與浪漫。
         </p>
         <NuxtLink
