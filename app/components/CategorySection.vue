@@ -5,7 +5,7 @@ defineProps<{ category: Category; articles: Article[] }>()
 </script>
 
 <template>
-  <section class="mx-auto max-w-6xl px-5 py-12">
+  <section class="mx-auto max-w-6xl px-5">
     <div class="mb-6 flex flex-wrap items-end justify-between gap-2">
       <div>
         <h2 class="text-2xl text-morandi-900">{{ category.name }}</h2>

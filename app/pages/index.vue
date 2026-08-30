@@ -37,9 +37,11 @@ const food = { category: categoryBySlug('food')!, articles: latestByCategory('fo
       </div>
     </section>
 
-    <CategorySection :category="taiwan.category" :articles="taiwan.articles" />
-    <CategorySection :category="japan.category" :articles="japan.articles" />
-    <CategorySection :category="global.category" :articles="global.articles" />
-    <CategorySection :category="food.category" :articles="food.articles" />
+    <div class="flex flex-col gap-16 py-16">
+      <CategorySection :category="taiwan.category" :articles="taiwan.articles" />
+      <CategorySection :category="japan.category" :articles="japan.articles" />
+      <CategorySection :category="global.category" :articles="global.articles" />
+      <CategorySection :category="food.category" :articles="food.articles" />
+    </div>
   </div>
 </template>
