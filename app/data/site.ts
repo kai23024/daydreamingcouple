@@ -35,10 +35,10 @@ export const categories: Category[] = [
   { slug: 'taiwan', name: '走過．台灣TAIWAN', nameEn: 'Taiwan', description: '從山城到海岸，記錄島嶼上最動人的風景。' },
   { slug: 'japan', name: '走過．日本JAPAN', nameEn: 'Japan', description: '四季分明的日本，總有拍不完的畫面。' },
   { slug: 'global', name: '走過．世界GLOBAL', nameEn: 'Global', description: '走得更遠一點，用鏡頭收集世界的顏色。' },
-  { slug: 'photography', name: '攝影．筆記PHOTOGRAPHY', nameEn: 'Photography', description: '器材、構圖與後製，關於拍照的大小事。' },
   { slug: 'food', name: '食光．紀錄FOOD', nameEn: 'Food', description: '每一趟旅行，都從一頓好吃的開始。' },
   { slug: 'stay', name: '旅宿．回憶HOTEL', nameEn: 'Stay', description: '睡得好，才走得遠，精選住宿分享。' },
   { slug: 'trips', name: '短途．旅程JOURNEY', nameEn: 'Short Trips', description: '不用出國，也能擁有的週末小旅行。' },
+  { slug: 'photography', name: '攝影．筆記PHOTOGRAPHY', nameEn: 'Photography', description: '器材、構圖與後製，關於拍照的大小事。' },
 ]
 
 export const articles: Article[] = [
@@ -653,32 +653,6 @@ export const articles: Article[] = [
     ],
   },
   {
-    id: 'gear-notes',
-    category: 'photography',
-    title: '旅行攝影包該帶什麼？',
-    date: '2026-03-01',
-    location: '',
-    seed: 'geargear',
-    body: [
-      '出門旅行拍照，行李空間有限，裝備越精簡越好。這幾年下來，固定會帶的就是一機兩鏡：一顆廣角用來拍風景跟建築，一顆標準變焦應付大部分日常場景。',
-      '腳架選輕便的碳纖維款，重量控制在一公斤以內，日出日落或夜景長曝光的時候會用到；備用電池跟記憶卡至少各帶兩份，旅途中充電不一定方便。',
-      '最後是一塊小小的鏡頭布跟氣吹，海邊或下雨天氣候潮濕，隨手清潔鏡頭是保護器材最簡單也最容易被忽略的習慣。',
-    ],
-  },
-  {
-    id: 'golden-hour',
-    category: 'photography',
-    title: '如何抓住黃金時刻的光線',
-    date: '2026-02-18',
-    location: '',
-    seed: 'goldenhour',
-    body: [
-      '黃金時刻指的是日出後與日落前，太陽角度較低的那段時間，光線會透過大氣層折射出溫暖柔和的色調，陰影也比較柔和，很適合拍風景跟人像。',
-      '出發前建議先查好當地的日出日落時間，並提早半小時到現場，把腳架跟構圖都準備好，因為這段光線變化非常快，常常是幾分鐘內天空就完全不一樣了。',
-      '如果錯過黃金時刻，日落後的藍色時刻（Blue Hour）也很值得等，天空會轉成一種深邃的靛藍色，跟城市燈光搭配起來別有氣氛。',
-    ],
-  },
-  {
     id: 'seoul-cafe',
     category: 'food',
     title: '聖水洞老宅咖啡廳巡禮',
@@ -774,58 +748,6 @@ export const articles: Article[] = [
       '⚠️ 溫馨預警（這家店不適合誰？）：',
       '這家店的主餐「非常有辣度」，微辣廢物吃起來會需要一直狂灌水。如果你是連一點點辣都完全無法接受的「絕對零辣度族群」，或是討厭排隊、無法接受紫蘇葉特殊氣味的朋友，那這家店可能就要稍微斟酌一下囉！',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
-    ],
-  },
-  {
-    id: 'ryokan-note',
-    category: 'stay',
-    title: '京都町屋民宿住宿心得',
-    date: '2025-10-04',
-    location: '京都',
-    seed: 'ryokan',
-    body: [
-      '這間町屋民宿由百年老屋改建，保留了原本的木造結構跟坪庭，一推開玄關的木門，喧鬧的街道聲瞬間被隔絕在外，只剩下庭院裡風吹過樹葉的聲音。',
-      '房間裡鋪著榻榻米，晚上店家會幫忙鋪好被褥，睡前泡個檜木浴缸，是這趟旅程裡最放鬆的時刻，也是最想念的一段回憶。',
-      '町屋大多藏在巷弄裡，入住前建議提早熟悉路線，晚上巷子裡的燈光不多，走起來別有一番京都特有的靜謐氣氛。',
-    ],
-  },
-  {
-    id: 'seaside-hotel',
-    category: 'stay',
-    title: '台東海景旅店推薦',
-    date: '2025-09-12',
-    location: '台東',
-    seed: 'seaside',
-    body: [
-      '這間旅店幾乎每間房都面海，拉開窗簾就是一整片太平洋，早上被陽光跟海浪聲喚醒，是在都市裡很難得到的體驗。',
-      '旅店本身走簡約風格，不做過多裝飾，把最好的視野留給房客，公共空間也有面海的休息區，適合帶本書坐上一整個早晨。',
-      '附近的海岸線很適合傍晚散步，退潮的時候還能走到潮間帶，運氣好可以看到不少有趣的海洋生物。',
-    ],
-  },
-  {
-    id: 'day-trip-jiaoxi',
-    category: 'trips',
-    title: '礁溪一日小旅行路線',
-    date: '2026-01-05',
-    location: '宜蘭・礁溪',
-    seed: 'jiaoxi',
-    body: [
-      '從台北搭火車到礁溪只要不到一小時，很適合安排成不過夜的一日小旅行。早上先到湯圍溝公園泡個免費足湯，暖暖身子再開始這趟行程。',
-      '中午在老街隨意吃幾樣在地小吃，蔥油餅跟肉羹是必點，接著到周邊的田野走走，冬天的宜蘭平原常常籠罩在薄霧裡，很有意境。',
-      '傍晚回程前，不妨找間溫泉會館泡個湯再上車，一整天下來身心都徹底放鬆，很適合當作平日忙碌後的小小充電。',
-    ],
-  },
-  {
-    id: 'day-trip-tamsui',
-    category: 'trips',
-    title: '淡水老街半日散策',
-    date: '2025-11-30',
-    location: '新北・淡水',
-    seed: 'tamsui',
-    body: [
-      '搭捷運到淡水站，先沿著老街隨意逛逛，阿給、鐵蛋這些經典小吃都在步行範圍內，邊走邊吃剛好消磨一個下午。',
-      '沿著河岸步道慢慢走向漁人碼頭，這段路可以一路看著淡水河，天氣好的時候還能遠遠看到觀音山的稜線。',
-      '抓準日落前抵達情人橋，是欣賞淡水夕陽最經典的位置，橘紅色的天空配上停泊的船隻，很多人專程來這裡等這一刻。',
     ],
   },
 ]
