@@ -3,8 +3,7 @@ import { articlesByCategory, categoryBySlug } from '~/data/site'
 
 useHead({ title: '白日夢情侶檔｜Daydreaming Couple' })
 
-const latestByCategory = (slug: string) =>
-  articlesByCategory(slug).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
+const latestByCategory = (slug: string) => articlesByCategory(slug).slice(0, 3)
 
 const taiwan = { category: categoryBySlug('taiwan')!, articles: latestByCategory('taiwan') }
 const japan = { category: categoryBySlug('japan')!, articles: latestByCategory('japan') }

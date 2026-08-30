@@ -753,7 +753,9 @@ export const articles: Article[] = [
 ]
 
 export function articlesByCategory(slug: string): Article[] {
-  return articles.filter(a => a.category === slug)
+  return articles
+    .filter(a => a.category === slug)
+    .sort((a, b) => b.date.localeCompare(a.date))
 }
 
 export function categoryBySlug(slug: string): Category | undefined {
