@@ -27,7 +27,7 @@ const food = { category: categoryBySlug('food')!, articles: latestByCategory('fo
           用鏡頭定格景色溫度，用舌尖收藏生活光芒
         </h1>
         <p class="mt-4 max-w-md text-morandi-200 lg:max-w-none lg:text-nowrap">
-          我們是一對熱愛踏尋風景與巷弄美食的情侶，希望能為你的下一段旅程與餐桌尋味，提供最溫暖的靈感與浪漫。
+          我們熱愛踏尋風景與巷弄美食，希望能為你的下一段旅程與餐桌尋味，提供最溫暖的靈感與浪漫。
         </p>
         <NuxtLink
           to="/taiwan"
