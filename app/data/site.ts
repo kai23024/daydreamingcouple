@@ -542,7 +542,7 @@ export const articles: Article[] = [
   {
     id: 'henningsvaer',
     category: 'global',
-    title: '亨寧斯維爾（Henningsvær）漫遊指南：羅浮敦群島的明信片',
+    title: '【挪威羅浮敦群島】亨寧斯維爾（Henningsvær）漫遊指南：充滿文藝氣息的威尼斯之淚',
     date: '2026-08-25',
     location: '羅浮敦群島・亨寧斯維爾',
     seed: 'henningsvaer',
@@ -598,7 +598,7 @@ export const articles: Article[] = [
   {
     id: 'sakrisoy',
     category: 'global',
-    title: '薩克利索伊（Sakrisøy）必訪絕景與在地美食全攻略：夢幻黃色小屋與海風中的鮭魚香！',
+    title: '【挪威羅浮敦群島】薩克利索伊（Sakrisøy）必訪絕景與在地美食全攻略：夢幻黃色小屋與海風中的鮭魚香！',
     date: '2026-08-29',
     location: '羅浮敦群島・薩克利索伊',
     seed: 'sakrisoy',
