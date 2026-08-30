@@ -134,7 +134,7 @@ export const articles: Article[] = [
   {
     id: 'quanjitang',
     category: 'taiwan',
-    title: '逃離城市喧囂！金瓜石勸濟堂＋報時山步道漫遊：海風、香火與山城美景，5分鐘登頂看最美陰陽海',
+    title: '【金瓜石勸濟堂&報時山步道】 逃離城市喧囂！海風、香火與山城美景，5分鐘登頂看最美陰陽海',
     date: '2026-03-05',
     location: '新北・金瓜石',
     seed: 'quanjitang',
