@@ -54,6 +54,18 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
           >
             {{ block.caption }}
           </p>
+          <p
+            v-else-if="'emphasis' in block"
+            class="font-semibold text-morandi-800"
+          >
+            {{ block.emphasis }}
+          </p>
+          <ul
+            v-else-if="'items' in block"
+            class="list-disc space-y-2 pl-5 marker:text-clay-600"
+          >
+            <li v-for="(item, j) in block.items" :key="j">{{ item }}</li>
+          </ul>
           <div
             v-else
             class="grid gap-3 overflow-hidden rounded-lg"

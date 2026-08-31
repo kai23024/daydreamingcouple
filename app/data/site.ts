@@ -19,6 +19,16 @@ export interface ArticleHeadingBlock {
   level?: 1 | 2
 }
 
+export interface ArticleEmphasisBlock {
+  /** A bold key-fact line (address, hours, best time to visit, etc.) — same size as body text but bold, marking it as quick-reference info rather than flowing narrative. Matches docx runs with bold formatting that aren't full headings. */
+  emphasis: string
+}
+
+export interface ArticleListBlock {
+  /** An indented bullet sub-list under a preceding intro line (e.g. transport options under "交通方式："). Matches docx paragraphs with a hanging-indent/bullet list style. */
+  items: string[]
+}
+
 export interface Article {
   id: string
   category: string
@@ -28,7 +38,7 @@ export interface Article {
   seed: string
   /** Real hero photo path (e.g. '/images/<id>/DSCxxxxx.jpg'). Falls back to a picsum seed placeholder when absent. */
   hero?: string
-  body: (string | ArticleImageBlock | ArticleCaptionBlock | ArticleHeadingBlock)[]
+  body: (string | ArticleImageBlock | ArticleCaptionBlock | ArticleHeadingBlock | ArticleEmphasisBlock | ArticleListBlock)[]
 }
 
 export const categories: Category[] = [
@@ -204,7 +214,7 @@ export const articles: Article[] = [
     body: [
       '當山城漸漸披上夜色，站在雞籠山的山腰上，迎面吹來是夾雜著草木與微濕泥土氣息的海風，聽著腳下石階傳來沉穩的踏步聲，眼前美景彷彿走進宮崎駿的動畫裡。每次去九份，是不是都在阿妹茶樓前面跟觀光客擠到懷疑人生？今天帶大家走入避開喧囂人潮的「九份雞籠山（基隆山步道）」，無論是一個人想逃離都市放空，還是牽著另一半在萬家燈火前留下浪漫身影，這裡都是能讓你徹底掏空記憶卡的寶藏祕境唷！快跟我們一起看下去吧！',
       { images: ['/images/jilong-mountain/DSC00088.jpg'] },
-      { heading: '📌九份雞籠山旅遊懶人包 ·', level: 1 },
+      { heading: '📌九份雞籠山旅遊懶人包', level: 1 },
       '景點名稱：九份雞籠山（基隆山登山步道）',
       '地理位置：新北市瑞芳區山尖路174-1號（隔頂停車場旁）',
       '開放時間：24小時全天候開放（建議傍晚造訪）',
@@ -670,15 +680,17 @@ export const articles: Article[] = [
     body: [
       '一踏入 Sakrisøy，就能聞到空氣瀰漫著鹹鹹的海風與木質乾燥魚架的獨特氣息，放眼望去能看到陡峭壯麗的雪山和湛藍清澈的水域，還有一棟棟亮黃色的水上小屋（Rorbu）點綴其中，就像是在冷色調的北極圈山海間，點燃了一盞盞溫暖的燈火。',
       { images: ['/images/sakrisoy/DSC01407.jpg'] },
-      { heading: '📌旅遊懶人包 ·', level: 1 },
-      '景點地點：薩克利索伊（Sakrisøy）',
-      "推薦美食：Anita's Sjømat（招牌頂級魚堡、現切燻鮭魚、新鮮甜蝦）",
-      '餐廳營業時間：約 10:00–18:00（季節不同請先確認官網）',
+      { heading: '📌旅遊懶人包', level: 1 },
+      { emphasis: '景點地點：薩克利索伊（Sakrisøy）' },
+      { emphasis: "推薦美食：Anita's Sjømat（招牌頂級魚堡、現切燻鮭魚、新鮮甜蝦）" },
+      { emphasis: '餐廳營業時間：約 10:00–18:00（季節不同請先確認官網）' },
       { heading: '💡駛進極地明信片！出發前必看交通指南', level: 1 },
-      '最佳造訪時間：清晨或黃昏前夕光線較為柔和，黃色小屋搭配光影變化非常迷人。',
-      '交通與停車方式：',
-      '自駕（推薦）：沿著 E10 公路往 Reine 方向行駛即可輕鬆抵達。',
-      '公車：可搭乘主要貫穿 E10 的 Line 300 或 Line 742 公車，在「Sakrisøy」或「Olenilsøya」站下車，步行即可抵達黃色小屋群，但整個島上的公車班次較少，建議先確認時刻表並提前做好備案安排。',
+      { emphasis: '最佳造訪時間：清晨或黃昏前夕光線較為柔和，黃色小屋搭配光影變化非常迷人。' },
+      { emphasis: '交通與停車方式：' },
+      { items: [
+        '自駕（推薦）：沿著 E10 公路往 Reine 方向行駛即可輕鬆抵達。',
+        '公車：可搭乘主要貫穿 E10 的 Line 300 或 Line 742 公車，在「Sakrisøy」或「Olenilsøya」站下車，步行即可抵達黃色小屋群，但整個島上的公車班次較少，建議先確認時刻表並提前做好備案安排。',
+      ] },
       { images: ['/images/sakrisoy/R0003711.jpg'] },
       { images: ['/images/sakrisoy/DSC01390.jpg'] },
       { images: ['/images/sakrisoy/DSC01381.jpg'] },
@@ -694,7 +706,7 @@ export const articles: Article[] = [
       { images: ['/images/sakrisoy/DSC01423.jpg'] },
       { images: ['/images/sakrisoy/DSC01360.jpg', '/images/sakrisoy/DSC01378.jpg'] },
       { heading: "舌尖上的北極圈！Anita's Sjømat 的極致海鮮饗宴", level: 1 },
-      "走累了，一旁就是著名的 Anita's Sjømat。一走進店裡就會被木質調的溫馨裝潢所吸引，更是可以聞到飄散空氣中、屬於剛出爐麵包與現煎魚餅的誘人香氣。這裡有著許多海鮮料理，每一口都是滿滿的大海鮮甜，也有販售給人以及寵物吃的魚乾，對有寵物的人來說太友好啦！據說在熱門季節這裡的人潮會超級多，建議旺季前來可以挑離峰用餐唷！另外店裡還有極具特色的鱈魚乾吊燈，壯觀得讓人很難不被它吸引目光！",
+      { emphasis: "走累了，一旁就是著名的 Anita's Sjømat。一走進店裡就會被木質調的溫馨裝潢所吸引，更是可以聞到飄散空氣中、屬於剛出爐麵包與現煎魚餅的誘人香氣。這裡有著許多海鮮料理，每一口都是滿滿的大海鮮甜，也有販售給人以及寵物吃的魚乾，對有寵物的人來說太友好啦！據說在熱門季節這裡的人潮會超級多，建議旺季前來可以挑離峰用餐唷！另外店裡還有極具特色的鱈魚乾吊燈，壯觀得讓人很難不被它吸引目光！" },
       { images: ['/images/sakrisoy/R0003707.jpg'] },
       { images: ['/images/sakrisoy/R0003701.jpg'] },
       { images: ['/images/sakrisoy/R0003706.jpg'] },
