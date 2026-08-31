@@ -28,6 +28,8 @@ export interface ArticleListItem {
 export interface ArticleListBlock {
   /** A bullet list, optionally two-level, matching docx paragraphs with a bullet/hanging-indent list style. */
   items: (string | ArticleListItem)[]
+  /** Use numbered (1/2/3) markers instead of bullets — for lists whose order is meaningful, e.g. numbers that match labels on an accompanying map image. */
+  ordered?: boolean
 }
 
 export interface ArticleInfoBoxBlock {
@@ -607,7 +609,7 @@ export const articles: Article[] = [
       '這次造訪的首爾校區，大學內的建築群是由創辦人趙永植博士所規劃，強調「文化世界」的理念。這裡不僅是韓國知名的私立高等學府（韓國三大私立名校之一），更是攝影師的殿堂。',
       '這趟旅行主要使用的焦段是16-35mm與70-200mm，這次的設備配置是特別為了拍攝帶有櫻花前景的全景畫面而準備，Eason一直以來都很喜歡使用超廣角拍攝下建築物帶來的張力，所以特別準備了16-35mm，另外70-200mm則是多用來捕捉建築物的特寫與光影，最後，因為校園裡人來人往，所以很建議可以利用腳架，才能後製疊出完美空景唷！',
       { images: ['/images/kyunghee-univ/map.jpg'] },
-      { items: [
+      { ordered: true, items: [
         '最經典的平和殿堂畫面',
         '站在平和殿堂前的斜坡往上拍攝也很不錯',
         '本館前的噴水池讓人一秒置身歐洲',

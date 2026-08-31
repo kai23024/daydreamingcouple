@@ -59,9 +59,11 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
           >
             {{ block.caption }}
           </p>
-          <ul
+          <component
+            :is="block.ordered ? 'ol' : 'ul'"
             v-else-if="'items' in block"
-            class="list-disc space-y-2 pl-5 marker:text-clay-600"
+            class="space-y-2 pl-5 marker:text-clay-600"
+            :class="block.ordered ? 'list-decimal' : 'list-disc'"
           >
             <template v-for="(item, j) in block.items" :key="j">
               <li v-if="typeof item === 'string'">{{ item }}</li>
@@ -72,7 +74,7 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
                 </ul>
               </li>
             </template>
-          </ul>
+          </component>
           <ul
             v-else-if="'infoBox' in block"
             class="list-disc space-y-2 rounded-lg bg-morandi-100 p-6 pl-10 marker:text-clay-600"
