@@ -290,7 +290,7 @@ export const articles: Article[] = [
   {
     id: 'ginkgo-utokyo',
     category: 'japan',
-    title: '📚✨ 走進日本最高學府的金色殿堂！東京大學銀杏：兼具書卷氣與史詩感的秋日攝影之旅',
+    title: '走進日本最高學府的金色殿堂！東京大學銀杏：兼具書卷氣與史詩感的秋日攝影之旅',
     date: '2025-11-20',
     location: '東京・本鄉',
     seed: 'ginkgo',
@@ -348,7 +348,7 @@ export const articles: Article[] = [
   {
     id: 'roppongi-lights',
     category: 'japan',
-    title: '🌃💎 東京冬季限定！六本木「鑽石星光」點燈攻略：捕捉奢華都會夜景的頂級氛圍感',
+    title: '東京冬季限定！六本木「鑽石星光」點燈攻略：捕捉奢華都會夜景的頂級氛圍感',
     date: '2025-12-24',
     location: '東京・六本木',
     seed: 'roppongi',
@@ -412,7 +412,7 @@ export const articles: Article[] = [
   {
     id: 'meiji-jingu-ginkgo',
     category: 'japan',
-    title: '📸✨ 東京秋日限定！明治神宮外苑「黃金隧道」點燈攻略：捕捉夢幻夜景的微醺浪漫',
+    title: '東京秋日限定！明治神宮外苑「黃金隧道」點燈攻略：捕捉夢幻夜景的微醺浪漫',
     date: '2025-11-25',
     location: '東京・北青山',
     seed: 'meijijingu',
