@@ -19,14 +19,20 @@ export interface ArticleHeadingBlock {
   level?: 1 | 2
 }
 
-export interface ArticleEmphasisBlock {
-  /** A bold key-fact line (address, hours, best time to visit, etc.) — same size as body text but bold, marking it as quick-reference info rather than flowing narrative. Matches docx runs with bold formatting that aren't full headings. */
-  emphasis: string
+export interface ArticleListItem {
+  text: string
+  /** Nested second-level bullets under this item (e.g. transport modes under "交通與停車方式："). */
+  sub?: string[]
 }
 
 export interface ArticleListBlock {
-  /** An indented bullet sub-list under a preceding intro line (e.g. transport options under "交通方式："). Matches docx paragraphs with a hanging-indent/bullet list style. */
-  items: string[]
+  /** A bullet list, optionally two-level, matching docx paragraphs with a bullet/hanging-indent list style. */
+  items: (string | ArticleListItem)[]
+}
+
+export interface ArticleInfoBoxBlock {
+  /** A highlighted quick-facts box (address, hours, price, etc.) rendered as a shaded bullet list — matches a docx "旅遊懶人包"-style callout box. */
+  infoBox: string[]
 }
 
 export interface Article {
@@ -38,7 +44,7 @@ export interface Article {
   seed: string
   /** Real hero photo path (e.g. '/images/<id>/DSCxxxxx.jpg'). Falls back to a picsum seed placeholder when absent. */
   hero?: string
-  body: (string | ArticleImageBlock | ArticleCaptionBlock | ArticleHeadingBlock | ArticleEmphasisBlock | ArticleListBlock)[]
+  body: (string | ArticleImageBlock | ArticleCaptionBlock | ArticleHeadingBlock | ArticleListBlock | ArticleInfoBoxBlock)[]
 }
 
 export const categories: Category[] = [
@@ -681,15 +687,18 @@ export const articles: Article[] = [
       '一踏入 Sakrisøy，就能聞到空氣瀰漫著鹹鹹的海風與木質乾燥魚架的獨特氣息，放眼望去能看到陡峭壯麗的雪山和湛藍清澈的水域，還有一棟棟亮黃色的水上小屋（Rorbu）點綴其中，就像是在冷色調的北極圈山海間，點燃了一盞盞溫暖的燈火。',
       { images: ['/images/sakrisoy/DSC01407.jpg'] },
       { heading: '📌旅遊懶人包', level: 1 },
-      { emphasis: '景點地點：薩克利索伊（Sakrisøy）' },
-      { emphasis: "推薦美食：Anita's Sjømat（招牌頂級魚堡、現切燻鮭魚、新鮮甜蝦）" },
-      { emphasis: '餐廳營業時間：約 10:00–18:00（季節不同請先確認官網）' },
+      { infoBox: [
+        '景點地點：薩克利索伊（Sakrisøy）',
+        "推薦美食：Anita's Sjømat（招牌頂級魚堡、現切燻鮭魚、新鮮甜蝦）",
+        '餐廳營業時間：約 10:00–18:00（季節不同請先確認官網）',
+      ] },
       { heading: '💡駛進極地明信片！出發前必看交通指南', level: 1 },
-      { emphasis: '最佳造訪時間：清晨或黃昏前夕光線較為柔和，黃色小屋搭配光影變化非常迷人。' },
-      { emphasis: '交通與停車方式：' },
       { items: [
-        '自駕（推薦）：沿著 E10 公路往 Reine 方向行駛即可輕鬆抵達。',
-        '公車：可搭乘主要貫穿 E10 的 Line 300 或 Line 742 公車，在「Sakrisøy」或「Olenilsøya」站下車，步行即可抵達黃色小屋群，但整個島上的公車班次較少，建議先確認時刻表並提前做好備案安排。',
+        '最佳造訪時間：清晨或黃昏前夕光線較為柔和，黃色小屋搭配光影變化非常迷人。',
+        { text: '交通與停車方式：', sub: [
+          '自駕（推薦）：沿著 E10 公路往 Reine 方向行駛即可輕鬆抵達。',
+          '公車：可搭乘主要貫穿 E10 的 Line 300 或 Line 742 公車，在「Sakrisøy」或「Olenilsøya」站下車，步行即可抵達黃色小屋群，但整個島上的公車班次較少，建議先確認時刻表並提前做好備案安排。',
+        ] },
       ] },
       { images: ['/images/sakrisoy/R0003711.jpg'] },
       { images: ['/images/sakrisoy/DSC01390.jpg'] },
@@ -706,7 +715,7 @@ export const articles: Article[] = [
       { images: ['/images/sakrisoy/DSC01423.jpg'] },
       { images: ['/images/sakrisoy/DSC01360.jpg', '/images/sakrisoy/DSC01378.jpg'] },
       { heading: "舌尖上的北極圈！Anita's Sjømat 的極致海鮮饗宴", level: 1 },
-      { emphasis: "走累了，一旁就是著名的 Anita's Sjømat。一走進店裡就會被木質調的溫馨裝潢所吸引，更是可以聞到飄散空氣中、屬於剛出爐麵包與現煎魚餅的誘人香氣。這裡有著許多海鮮料理，每一口都是滿滿的大海鮮甜，也有販售給人以及寵物吃的魚乾，對有寵物的人來說太友好啦！據說在熱門季節這裡的人潮會超級多，建議旺季前來可以挑離峰用餐唷！另外店裡還有極具特色的鱈魚乾吊燈，壯觀得讓人很難不被它吸引目光！" },
+      "走累了，一旁就是著名的 Anita's Sjømat。一走進店裡就會被木質調的溫馨裝潢所吸引，更是可以聞到飄散空氣中、屬於剛出爐麵包與現煎魚餅的誘人香氣。這裡有著許多海鮮料理，每一口都是滿滿的大海鮮甜，也有販售給人以及寵物吃的魚乾，對有寵物的人來說太友好啦！據說在熱門季節這裡的人潮會超級多，建議旺季前來可以挑離峰用餐唷！另外店裡還有極具特色的鱈魚乾吊燈，壯觀得讓人很難不被它吸引目光！",
       { images: ['/images/sakrisoy/R0003707.jpg'] },
       { images: ['/images/sakrisoy/R0003701.jpg'] },
       { images: ['/images/sakrisoy/R0003706.jpg'] },

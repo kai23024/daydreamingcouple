@@ -54,17 +54,25 @@ useHead({ title: `${article.title}｜白日夢情侶檔` })
           >
             {{ block.caption }}
           </p>
-          <p
-            v-else-if="'emphasis' in block"
-            class="font-semibold text-morandi-800"
-          >
-            {{ block.emphasis }}
-          </p>
           <ul
             v-else-if="'items' in block"
             class="list-disc space-y-2 pl-5 marker:text-clay-600"
           >
-            <li v-for="(item, j) in block.items" :key="j">{{ item }}</li>
+            <template v-for="(item, j) in block.items" :key="j">
+              <li v-if="typeof item === 'string'">{{ item }}</li>
+              <li v-else>
+                {{ item.text }}
+                <ul v-if="item.sub" class="mt-2 list-[circle] space-y-2 pl-5 marker:text-morandi-400">
+                  <li v-for="(sub, k) in item.sub" :key="k">{{ sub }}</li>
+                </ul>
+              </li>
+            </template>
+          </ul>
+          <ul
+            v-else-if="'infoBox' in block"
+            class="list-disc space-y-2 rounded-lg bg-morandi-100 p-6 pl-10 marker:text-clay-600"
+          >
+            <li v-for="(item, j) in block.infoBox" :key="j">{{ item }}</li>
           </ul>
           <div
             v-else
