@@ -370,7 +370,7 @@ export const articles: Article[] = [
         ] },
       ] },
       { images: ['/images/roppongi-lights/R0004020.jpg'] },
-      { heading: '🚇 櫸木坂大道怎麼去？最便利的地鐵站出口', level: 1 },
+      { heading: '🚇 櫸木坂大道怎麼去？最便利的地鐵站出口', level: 2 },
       '六本木之丘的交通非常便利，地鐵出站後步行即可輕鬆抵達被燈海包圍的櫸木坂大道：',
       { items: [
         '東京地鐵日比谷線、都營大江戶線「六本木駅」： 徒步約 1 分鐘（約 100 公尺）。',
