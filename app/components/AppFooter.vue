@@ -24,7 +24,7 @@ const year = new Date().getFullYear()
         </div>
         <div>
           <p class="mb-2 font-medium text-morandi-800">關於這個網站</p>
-          <p>以 Vue 3 + Nuxt 打造，部署於 Firebase Hosting。</p>
+          <p>部署於 Firebase Hosting。</p>
         </div>
       </div>
       <div class="mt-8 border-t border-morandi-200 pt-4 text-xs text-morandi-400">
