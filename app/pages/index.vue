@@ -15,9 +15,14 @@ const food = { category: categoryBySlug('food')!, articles: latestByCategory('fo
   <div>
     <section class="relative overflow-hidden bg-morandi-950 text-morandi-50">
       <img
-        src="https://picsum.photos/seed/dreamcouple-hero/1600/800"
+        src="/images/home/hero-mobile.jpg"
         alt="旅行風景"
-        class="absolute inset-0 h-full w-full object-cover opacity-40"
+        class="absolute inset-0 h-full w-full object-cover opacity-40 sm:hidden"
+      >
+      <img
+        src="/images/home/hero.jpg"
+        alt="旅行風景"
+        class="absolute inset-0 hidden h-full w-full object-cover opacity-40 sm:block"
       >
       <div class="absolute inset-0 bg-gradient-to-t from-morandi-950 via-morandi-950/40 to-morandi-950/10" />
       <div class="relative mx-auto flex max-w-6xl flex-col items-start px-5 py-28">
