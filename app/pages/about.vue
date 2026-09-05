@@ -16,7 +16,10 @@ useHead({ title: '關於．我們US｜白日夢情侶檔' })
     <div class="mt-8 space-y-5 leading-relaxed text-morandi-700">
       <p>哈囉！我們是 Eason 與 Jennifer！</p>
       <p>
-        平日裡我們是穿梭在數字和專案之間的金融業上班族，但到了放假時間，我們直接化身「實現白日夢」的旅遊部落客！一個愛攝影、一個愛吃美食的神奇組合，致力於踏遍各個城市及不同的國家，尋求新奇、特別或純粹紓壓的體驗，就算這些體驗有時候辛苦、有時候甚至略有不適，但這些都是難得可貴的經歷，也讓我們成為更好的自己。
+        平日裡，我們是穿梭在數字與專案間的金融業上班族；到了週末，我們直接切換模式，化身「實現白日夢」的旅遊部落客！
+      </p>
+      <p>
+        一個極度熱愛攝影、一個專精尋找隱藏版餐廳的美食狂熱者，組成了這個默契十足的神奇組合。我們致力於走訪不同的城市與國家，解鎖各種新奇、獨特、甚至是有些怪異的在地體驗。就算過程中偶爾狼狽、有點辛苦，甚至伴隨著不適，但對我們來說，這些意料之外的冒險都是無可取代的養分，也讓我們在一次次探索中，看見更好的自己。
       </p>
       <p>
         在旅途中當然不可能永遠風和日麗，我們也曾被暴雨淋成落湯雞、被公車放鳥直接多走好幾公里，甚至吃到極度傻眼的雷店。但對我們來說，這些「意料之外」的插曲，都是讓旅行更精采的調味劑，也是我們想設立網站的原因，既然我們已經替大家把坑都踩過一遍了，那不如把這些「避坑指南」跟「隱藏拍照點」通通打包分享，讓大家的每一次出發，都能順利又好玩！
@@ -31,10 +34,28 @@ useHead({ title: '關於．我們US｜白日夢情侶檔' })
 
       <h2 class="mt-8 text-xl font-bold text-morandi-900">合作成就與品牌歷程</h2>
       <p>我們長期深耕旅遊攝影與質感文案，具備豐富的跨國採訪與社群宣傳經驗：</p>
-      <ul class="list-disc space-y-2 pl-5 marker:text-clay-600">
-        <li><strong class="font-medium text-morandi-800">日本旅遊專案特派：</strong>2025 年去趣九州 MaaS 專案日本特派員、2025 年日本埼玉縣觀光局社群宣傳合作案。</li>
-        <li><strong class="font-medium text-morandi-800">平台駐站優質創作者：</strong>Funliday 長期合作撰稿作家、2025 年去趣合作撰稿作家。</li>
-        <li><strong class="font-medium text-morandi-800">政府專案與空間攝影：</strong>2020 年宜蘭縣綠色優質場域評鑑案數位行銷專案、室內外建案空間拍攝專案。</li>
+      <ul class="list-disc space-y-3 pl-5 marker:text-clay-600">
+        <li>
+          <strong class="font-medium text-morandi-800">日本旅遊專案特派：</strong>
+          <ul class="mt-2 list-[circle] space-y-2 pl-5 marker:text-morandi-400">
+            <li>2025 年去趣九州 MaaS 專案日本特派員</li>
+            <li>2025 年日本埼玉縣觀光局社群宣傳合作案</li>
+          </ul>
+        </li>
+        <li>
+          <strong class="font-medium text-morandi-800">平台駐站優質創作者：</strong>
+          <ul class="mt-2 list-[circle] space-y-2 pl-5 marker:text-morandi-400">
+            <li>Funliday 長期合作撰稿作家</li>
+            <li>2025 年去趣合作撰稿作家</li>
+          </ul>
+        </li>
+        <li>
+          <strong class="font-medium text-morandi-800">政府專案與空間攝影：</strong>
+          <ul class="mt-2 list-[circle] space-y-2 pl-5 marker:text-morandi-400">
+            <li>2020 年宜蘭縣綠色優質場域評鑑案數位行銷專案</li>
+            <li>室內外建案空間拍攝專案</li>
+          </ul>
+        </li>
       </ul>
     </div>
 
