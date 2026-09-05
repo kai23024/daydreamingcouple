@@ -26,10 +26,10 @@ useHead({ title: '關於．我們US｜白日夢情侶檔' })
       </p>
 
       <h2 class="mt-8 text-xl font-bold text-morandi-900">我們的網站特色：不只是遊記，更是你的旅程神隊友！</h2>
-      <ul class="space-y-3">
-        <li>📸 <strong class="font-medium text-morandi-800">相機焦段與構圖大公開：</strong>不只告訴你好不好拍，更直接告訴你「幾點去光線最好」、「建議帶幾 mm 焦段」、「站在哪個角落能避開人潮」，攝影新手也能輕鬆拍出大片！</li>
-        <li>🥢 <strong class="font-medium text-morandi-800">靈魂級五感食記：</strong>拒絕空洞的美味形容！精準描述口感層次、真實風味與在地購買攻略，絕對不讓你的胃踩雷。</li>
-        <li>🗺️ <strong class="font-medium text-morandi-800">保姆級實用攻略：</strong>從季節選擇、交通路線到行程節奏，提供最扎實、最直接的資訊懶人包，拿走就能直接出發！</li>
+      <ul class="list-disc space-y-3 pl-5 marker:text-clay-600">
+        <li><strong class="font-medium text-morandi-800">相機焦段與構圖大公開：</strong>不只告訴你好不好拍，更直接告訴你「幾點去光線最好」、「建議帶幾 mm 焦段」、「站在哪個角落能避開人潮」，攝影新手也能輕鬆拍出大片！</li>
+        <li><strong class="font-medium text-morandi-800">靈魂級五感食記：</strong>拒絕空洞的美味形容！精準描述口感層次、真實風味與在地購買攻略，絕對不讓你的胃踩雷。</li>
+        <li><strong class="font-medium text-morandi-800">保姆級實用攻略：</strong>從季節選擇、交通路線到行程節奏，提供最扎實、最直接的資訊懶人包，拿走就能直接出發！</li>
       </ul>
 
       <h2 class="mt-8 text-xl font-bold text-morandi-900">合作成就與品牌歷程</h2>
