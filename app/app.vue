@@ -1,7 +1,11 @@
 <script setup lang="ts">
 onMounted(() => {
   const prevent = (e: Event) => e.preventDefault()
-  document.addEventListener('contextmenu', prevent)
+  // Only block the right-click menu on photos (deters "另存圖片"), not site-wide —
+  // blocking it everywhere also blocked "在新分頁中開啟連結" on nav items and article cards.
+  document.addEventListener('contextmenu', (e) => {
+    if ((e.target as HTMLElement).tagName === 'IMG') e.preventDefault()
+  })
   document.addEventListener('dragstart', prevent)
   document.addEventListener('copy', prevent)
   document.addEventListener('cut', prevent)
