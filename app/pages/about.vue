@@ -61,7 +61,7 @@ useHead({ title: '關於．我們US｜白日夢情侶檔' })
 
     <div class="mt-10 rounded-lg bg-morandi-100 p-6 text-sm text-morandi-500">
       <p class="font-medium text-morandi-800">聯絡方式</p>
-      <p class="mt-2">Email：kai23024@gmail.com</p>
+      <p class="mt-2">Email：<a href="mailto:kai23024@gmail.com" class="hover:text-clay-600 hover:underline">kai23024@gmail.com</a></p>
       <p>
         Instagram：
         <a href="https://www.instagram.com/tw.traveler.eason" target="_blank" rel="noopener" class="hover:text-clay-600 hover:underline">tw.traveler.eason</a>

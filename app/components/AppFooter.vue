@@ -14,7 +14,7 @@ const year = new Date().getFullYear()
         </div>
         <div>
           <p class="mb-2 font-medium text-morandi-800">聯絡我們</p>
-          <p>Email：kai23024@gmail.com</p>
+          <p>Email：<a href="mailto:kai23024@gmail.com" class="hover:text-clay-600 hover:underline">kai23024@gmail.com</a></p>
           <p>
             Instagram：
             <a href="https://www.instagram.com/tw.traveler.eason" target="_blank" rel="noopener" class="hover:text-clay-600 hover:underline">tw.traveler.eason</a>
