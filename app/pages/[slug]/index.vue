@@ -19,7 +19,7 @@ useHead({ title: `${category.name}｜白日夢情侶檔` })
   <div class="mx-auto max-w-6xl px-5 py-12">
     <header class="mb-10 border-b border-morandi-200 pb-6">
       <h1 class="font-hand text-4xl text-morandi-900">{{ label.zh }}</h1>
-      <p class="font-hand mt-2 text-lg text-morandi-500">{{ category.description }}</p>
+      <p class="font-hand mt-2 text-2xl text-morandi-500">{{ category.description }}</p>
     </header>
 
     <div v-if="items.length" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
