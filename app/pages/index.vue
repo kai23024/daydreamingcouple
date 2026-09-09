@@ -33,12 +33,6 @@ const food = { category: categoryBySlug('food')!, articles: latestByCategory('fo
         <p class="mt-4 max-w-md text-morandi-200 lg:max-w-none lg:text-nowrap">
           我們熱愛踏尋風景與巷弄美食，希望能為你的下一段旅程與餐桌尋味，提供最溫暖的靈感與浪漫。
         </p>
-        <NuxtLink
-          to="/taiwan"
-          class="mt-8 inline-block rounded-full bg-clay-600 px-6 py-3 text-sm font-medium text-morandi-50 transition hover:bg-clay-700 active:scale-[0.98]"
-        >
-          立即探索 Explore Now
-        </NuxtLink>
       </div>
     </section>
 
