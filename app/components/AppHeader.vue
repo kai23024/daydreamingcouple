@@ -34,7 +34,7 @@ const navLinks = [
           v-for="link in navLinks"
           :key="link.to"
           :to="link.to"
-          class="flex shrink-0 flex-col items-center whitespace-nowrap text-morandi-500 transition hover:text-clay-600"
+          class="flex shrink-0 flex-col items-center whitespace-nowrap text-morandi-900 transition hover:text-clay-600"
           active-class="text-clay-600 font-medium"
         >
           <span class="font-hand text-xl">{{ link.zh }}</span>
@@ -57,7 +57,7 @@ const navLinks = [
         v-for="link in navLinks"
         :key="link.to"
         :to="link.to"
-        class="rounded px-2 py-2 text-sm text-morandi-500 hover:bg-morandi-100"
+        class="rounded px-2 py-2 text-sm text-morandi-900 hover:bg-morandi-100"
         active-class="text-clay-600 font-medium"
         @click="open = false"
       >
