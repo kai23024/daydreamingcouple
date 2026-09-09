@@ -1132,6 +1132,14 @@ export function categoryBySlug(slug: string): Category | undefined {
   return categories.find(c => c.slug === slug)
 }
 
+/** 分類/導覽名稱格式為「中文．中文ENGLISH」，取尾端連續大寫字母當作英文行，其餘當中文行。 */
+export function splitCategoryName(label: string): { zh: string; en: string } {
+  const match = label.match(/^(.*?)([A-Z]+)$/)
+  if (!match) return { zh: label, en: '' }
+  const en = match[2]
+  return { zh: match[1], en: en.charAt(0) + en.slice(1).toLowerCase() }
+}
+
 export function articleById(category: string, id: string): Article | undefined {
   return articles.find(a => a.category === category && a.id === id)
 }

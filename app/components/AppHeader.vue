@@ -1,21 +1,13 @@
 <script setup lang="ts">
-import { categories } from '~/data/site'
+import { categories, splitCategoryName } from '~/data/site'
 
 const open = ref(false)
 
 const logoChars = '白日夢情侶檔'.split('')
 
-// 分類名稱格式為「中文．中文ENGLISH」，取尾端連續大寫字母當作英文行，其餘當中文行
-function splitLabel(label: string) {
-  const match = label.match(/^(.*?)([A-Z]+)$/)
-  if (!match) return { zh: label, en: '' }
-  const en = match[2]
-  return { zh: match[1], en: en.charAt(0) + en.slice(1).toLowerCase() }
-}
-
 const navLinks = [
-  ...categories.map(c => ({ to: `/${c.slug}`, label: c.name, ...splitLabel(c.name) })),
-  { to: '/about', label: '關於．我們US', ...splitLabel('關於．我們US') },
+  ...categories.map(c => ({ to: `/${c.slug}`, label: c.name, ...splitCategoryName(c.name) })),
+  { to: '/about', label: '關於．我們US', ...splitCategoryName('關於．我們US') },
 ]
 </script>
 

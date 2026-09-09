@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { articlesByCategory, categoryBySlug } from '~/data/site'
+import { articlesByCategory, categoryBySlug, splitCategoryName } from '~/data/site'
 
 const route = useRoute()
 const slug = route.params.slug as string
@@ -10,6 +10,7 @@ if (!category) {
 }
 
 const items = articlesByCategory(slug)
+const label = splitCategoryName(category.name)
 
 useHead({ title: `${category.name}｜白日夢情侶檔` })
 </script>
@@ -17,7 +18,10 @@ useHead({ title: `${category.name}｜白日夢情侶檔` })
 <template>
   <div class="mx-auto max-w-6xl px-5 py-12">
     <header class="mb-10 border-b border-morandi-200 pb-6">
-      <h1 class="text-3xl text-morandi-900">{{ category.name }}</h1>
+      <h1 class="text-3xl text-morandi-900">
+        <span class="font-hand">{{ label.zh }}</span>
+        <span class="font-script text-2xl text-morandi-400">{{ label.en }}</span>
+      </h1>
       <p class="mt-2 text-morandi-500">{{ category.description }}</p>
     </header>
 
