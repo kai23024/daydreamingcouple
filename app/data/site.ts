@@ -50,9 +50,9 @@ export interface Article {
 }
 
 export const categories: Category[] = [
-  { slug: 'taiwan', name: '走過．台灣TAIWAN', nameEn: 'Taiwan', description: '從山城到海岸，記錄島嶼上最動人的風景。' },
-  { slug: 'japan', name: '走過．日本JAPAN', nameEn: 'Japan', description: '四季分明的日本，總有拍不完的畫面。' },
   { slug: 'global', name: '走過．世界GLOBAL', nameEn: 'Global', description: '走得更遠一點，用鏡頭收集世界的顏色。' },
+  { slug: 'japan', name: '走過．日本JAPAN', nameEn: 'Japan', description: '四季分明的日本，總有拍不完的畫面。' },
+  { slug: 'taiwan', name: '走過．台灣TAIWAN', nameEn: 'Taiwan', description: '從山城到海岸，記錄島嶼上最動人的風景。' },
   { slug: 'food', name: '食光．紀錄FOOD', nameEn: 'Food', description: '每一趟旅行，都從一頓好吃的開始。' },
   { slug: 'stay', name: '旅宿．回憶HOTEL', nameEn: 'Stay', description: '睡得好，才走得遠，精選住宿分享。' },
   { slug: 'trips', name: '短途．旅程JOURNEY', nameEn: 'Short Trips', description: '不用出國，也能擁有的週末小旅行。' },

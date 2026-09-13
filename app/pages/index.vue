@@ -38,9 +38,9 @@ const photography = { category: categoryBySlug('photography')!, articles: latest
     </section>
 
     <div class="flex flex-col gap-16 py-16">
-      <CategorySection :category="taiwan.category" :articles="taiwan.articles" />
-      <CategorySection :category="japan.category" :articles="japan.articles" />
       <CategorySection :category="global.category" :articles="global.articles" />
+      <CategorySection :category="japan.category" :articles="japan.articles" />
+      <CategorySection :category="taiwan.category" :articles="taiwan.articles" />
       <CategorySection :category="food.category" :articles="food.articles" />
       <CategorySection :category="photography.category" :articles="photography.articles" />
     </div>
