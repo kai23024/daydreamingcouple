@@ -9,6 +9,7 @@ const taiwan = { category: categoryBySlug('taiwan')!, articles: latestByCategory
 const japan = { category: categoryBySlug('japan')!, articles: latestByCategory('japan') }
 const global = { category: categoryBySlug('global')!, articles: latestByCategory('global') }
 const food = { category: categoryBySlug('food')!, articles: latestByCategory('food') }
+const photography = { category: categoryBySlug('photography')!, articles: latestByCategory('photography') }
 </script>
 
 <template>
@@ -41,6 +42,7 @@ const food = { category: categoryBySlug('food')!, articles: latestByCategory('fo
       <CategorySection :category="japan.category" :articles="japan.articles" />
       <CategorySection :category="global.category" :articles="global.articles" />
       <CategorySection :category="food.category" :articles="food.articles" />
+      <CategorySection :category="photography.category" :articles="photography.articles" />
     </div>
   </div>
 </template>
