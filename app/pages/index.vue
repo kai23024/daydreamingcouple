@@ -1,7 +1,28 @@
 <script setup lang="ts">
 import { articlesByCategory, categoryBySlug } from '~/data/site'
 
-useHead({ title: '白日夢情侶檔｜Daydreaming Couple' })
+const siteUrl = 'https://daydreamingcouple.com'
+const description = '一對情侶的旅行與美食紀錄：台灣、日本與世界各地的風景與味道。'
+
+useSeoMeta({
+  title: '白日夢情侶檔｜Daydreaming Couple',
+  description,
+  ogUrl: siteUrl
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: siteUrl }],
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: '白日夢情侶檔｜Daydreaming Couple',
+      url: siteUrl,
+      description
+    })
+  }]
+})
 
 const latestByCategory = (slug: string) => articlesByCategory(slug).slice(0, 3)
 

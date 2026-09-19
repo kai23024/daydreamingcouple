@@ -1,5 +1,16 @@
 <script setup lang="ts">
-useHead({ title: '關於．我們US｜白日夢情侶檔' })
+const siteUrl = 'https://daydreamingcouple.com'
+const description = '當「數字控」遇上「感性控」：一場把白日夢變成現實的冒險！金融業上班族夫妻，用鏡頭與味蕾紀錄台灣、日本與世界各地的旅行風景。'
+
+useSeoMeta({
+  title: '關於．我們US｜白日夢情侶檔',
+  description,
+  ogUrl: `${siteUrl}/about`
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/about` }]
+})
 </script>
 
 <template>

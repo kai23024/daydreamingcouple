@@ -12,7 +12,23 @@ if (!category) {
 const items = articlesByCategory(slug)
 const label = splitCategoryName(category.name)
 
-useHead({ title: `${category.name}｜白日夢情侶檔` })
+const siteUrl = 'https://daydreamingcouple.com'
+const pageUrl = `${siteUrl}/${category.slug}`
+
+useSeoMeta({
+  title: `${category.name}｜白日夢情侶檔`,
+  description: category.description,
+  ogTitle: category.name,
+  ogDescription: category.description,
+  ogUrl: pageUrl,
+  twitterCard: 'summary_large_image',
+  twitterTitle: category.name,
+  twitterDescription: category.description
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: pageUrl }]
+})
 </script>
 
 <template>

@@ -1418,3 +1418,10 @@ export function articleExcerpt(article: Article): string {
   const first = article.body.find((block): block is string => typeof block === 'string')
   return first ?? ''
 }
+
+/** articleExcerpt() trimmed to a search-snippet-friendly length, for <meta name="description">/og:description. */
+export function articleMetaDescription(article: Article): string {
+  const excerpt = articleExcerpt(article)
+  const limit = 120
+  return excerpt.length > limit ? `${excerpt.slice(0, limit)}…` : excerpt
+}

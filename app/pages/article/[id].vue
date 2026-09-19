@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { articles, articlesByCategory, categoryBySlug } from '~/data/site'
+import { articles, articlesByCategory, articleMetaDescription, categoryBySlug } from '~/data/site'
 
 const route = useRoute()
 const articleId = route.params.id as string
@@ -13,7 +13,46 @@ if (!article || !category) {
 
 const more = articlesByCategory(article.category).filter(a => a.id !== article.id).slice(0, 3)
 
-useHead({ title: `${article.title}｜白日夢情侶檔` })
+const siteUrl = 'https://daydreamingcouple.com'
+const pageUrl = `${siteUrl}/article/${article.id}`
+const description = articleMetaDescription(article)
+const imageUrl = article.hero
+  ? `${siteUrl}${article.hero}`
+  : `https://picsum.photos/seed/${article.seed}/1600/800`
+
+useSeoMeta({
+  title: `${article.title}｜白日夢情侶檔`,
+  description,
+  ogTitle: article.title,
+  ogDescription: description,
+  ogImage: imageUrl,
+  ogType: 'article',
+  ogUrl: pageUrl,
+  articlePublishedTime: article.date,
+  articleSection: category.name,
+  twitterCard: 'summary_large_image',
+  twitterTitle: article.title,
+  twitterDescription: description,
+  twitterImage: imageUrl
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: pageUrl }],
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: article.title,
+      description,
+      image: imageUrl,
+      datePublished: article.date,
+      author: { '@type': 'Organization', name: '白日夢情侶檔' },
+      publisher: { '@type': 'Organization', name: '白日夢情侶檔' },
+      mainEntityOfPage: pageUrl
+    })
+  }]
+})
 </script>
 
 <template>
