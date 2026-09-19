@@ -37,6 +37,11 @@ export interface ArticleInfoBoxBlock {
   infoBox: string[]
 }
 
+export interface ArticleRelatedBlock {
+  /** Article ids to recommend as a "延伸閱讀" box at this position — for internal linking to topically/geographically related articles. */
+  related: string[]
+}
+
 export interface Article {
   id: string
   category: string
@@ -46,7 +51,7 @@ export interface Article {
   seed: string
   /** Real hero photo path (e.g. '/images/<id>/DSCxxxxx.jpg'). Falls back to a picsum seed placeholder when absent. */
   hero?: string
-  body: (string | ArticleImageBlock | ArticleCaptionBlock | ArticleHeadingBlock | ArticleListBlock | ArticleInfoBoxBlock)[]
+  body: (string | ArticleImageBlock | ArticleCaptionBlock | ArticleHeadingBlock | ArticleListBlock | ArticleInfoBoxBlock | ArticleRelatedBlock)[]
 }
 
 export const categories: Category[] = [
@@ -112,6 +117,7 @@ export const articles: Article[] = [
         '保暖與防蚊： 不厭亭位於山脊稜線，傍晚過後風勢通常非常強勁且溫度驟降，即便是夏天也建議多帶一件防風外套喔！',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['liandong-elementary', 'jilong-mountain'] },
     ],
   },
   {
@@ -159,6 +165,7 @@ export const articles: Article[] = [
         '放鬆舒適度： ★★★☆☆（看著陰陽海吹海風，身心非常療癒，但夏天很曝曬）',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['buyan-pavilion', 'quanjitang'] },
     ],
   },
   {
@@ -230,6 +237,7 @@ export const articles: Article[] = [
         '步道行走安全：因為山城的樓梯跟陡坡較多，而且雖然報時山步道平緩，但階梯雨天容易濕滑，所以建議收起高跟鞋、穿著舒適的球鞋，才能開開心心地完成這趟小旅行唷！',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['jilong-mountain', 'liandong-elementary'] },
     ],
   },
   {
@@ -285,6 +293,7 @@ export const articles: Article[] = [
       ] },
       '白日夢小提醒：九份及瑞芳一帶極易下雨起霧，出發前一定要先確認氣象預報喔！',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['buyan-pavilion', 'quanjitang'] },
     ],
   },
   {
@@ -343,6 +352,7 @@ export const articles: Article[] = [
       ] },
       { images: ['/images/ginkgo-utokyo/DSC08420.jpg'] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['roppongi-lights', 'meiji-jingu-ginkgo'] },
     ],
   },
   {
@@ -407,6 +417,7 @@ export const articles: Article[] = [
       ] },
       { images: ['/images/roppongi-lights/DSC08722.jpg'] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['ginkgo-utokyo', 'meiji-jingu-ginkgo'] },
     ],
   },
   {
@@ -470,6 +481,7 @@ export const articles: Article[] = [
       ] },
       { images: ['/images/meiji-jingu-ginkgo/DSC08664.jpg'] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['ginkgo-utokyo', 'roppongi-lights'] },
     ],
   },
   {
@@ -562,6 +574,7 @@ export const articles: Article[] = [
         '回訪意願： ★★☆☆☆（櫻花季首爾美景太多了，必須先去開發新景點拉～）',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['seoul-forest', 'kyunghee-univ', 'miseongok'] },
     ],
   },
   {
@@ -628,6 +641,7 @@ export const articles: Article[] = [
       { images: ['/images/seoul-forest/DSC07068.jpg'] },
       { caption: 'α7C II+FE 70-200mm F4 G2 l ISO 640, 200mm, F4, 1/200s' },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['seoul-tower', 'kyunghee-univ'] },
     ],
   },
   {
@@ -705,6 +719,7 @@ export const articles: Article[] = [
       { images: ['/images/kyunghee-univ/DSC06980.jpg'] },
       { caption: 'α7C II+FE 70-200mm F4 G2 l ISO 100, 70mm, F8, 1/200s' },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['seoul-tower', 'seoul-forest'] },
     ],
   },
   {
@@ -771,6 +786,7 @@ export const articles: Article[] = [
       '體力消耗 ⭐☆☆☆☆（小鎮內部道路全程平坦，輕鬆散步即可走完主要景點~）',
       '回訪意願 ⭐⭐⭐⭐⭐（什麼都不做的坐在港口欣賞風景都超療癒！）',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['sakrisoy', 'reine', 'easa-drone-permit'] },
     ],
   },
   {
@@ -831,6 +847,7 @@ export const articles: Article[] = [
       "體力消耗：★☆☆☆☆ （累了隨時去旁邊的Anita's Sjømat吃美食喝咖啡休息！）",
       '回訪意願：★★★☆☆ （主要考量可以拍攝的畫面相對較固定，但還是很值得造訪）',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['henningsvaer', 'reine'] },
     ],
   },
   {
@@ -896,6 +913,7 @@ export const articles: Article[] = [
       '回訪意願：★★★★★（四季皆有不同風貌，絕對值得二次造訪）',
       '白日夢小提醒：因為雷訥當地的 Rorbu 多為私人住宿或居民住宅，在拍攝時請保持安靜，切勿打擾居民生活或擅闖私人土地喔！',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['hamnoy', 'sakrisoy', 'easa-drone-permit'] },
     ],
   },
   {
@@ -951,6 +969,7 @@ export const articles: Article[] = [
       '體力消耗：★☆☆☆☆（路線平緩好走，適合輕鬆漫步）',
       '回訪意願：★★★☆☆（沒吃到肉桂捲太不甘心啦！）',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['reine', 'henningsvaer', 'easa-drone-permit'] },
     ],
   },
   {
@@ -1027,6 +1046,7 @@ export const articles: Article[] = [
         '回訪意願⭐⭐⭐⭐⭐ （兩人點一個套餐就直接飽到天靈蓋，高CP值超級滿足。）',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['miseongok', 'oats-coffee'] },
     ],
   },
   {
@@ -1078,6 +1098,7 @@ export const articles: Article[] = [
         '回訪意願⭐⭐⭐⭐⭐ （在明洞想找傳統料理的話，這間絕對是首選。而且以明洞的地段和純韓牛的用料來說，CP值非常高。）',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['hongs-jjukkumi', 'oats-coffee', 'seoul-tower'] },
     ],
   },
   {
@@ -1128,6 +1149,7 @@ export const articles: Article[] = [
         '回訪意願⭐⭐⭐⭐⭐ （三巨頭名不虛傳，必定回訪！）',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['hongs-jjukkumi', 'miseongok'] },
     ],
   },
   {
@@ -1211,6 +1233,7 @@ export const articles: Article[] = [
         '禁飛區與國家公園限制：取得 A1/A3 證照並不代表「全歐洲皆可飛」。以挪威來說，許多熱門景點（如國家公園、羅弗敦群島部分區域、機場周邊 5 公里內）皆屬於嚴格禁飛區，所以建議下載 Ninox Drone之類的官方 App 查詢實時禁飛區（其他歐洲國家亦有類似的app可下載），避免因為誤飛而面臨高額罰款。',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['henningsvaer', 'reine', 'a-lofoten', 'hamnoy'] },
     ],
   },
   {
@@ -1272,6 +1295,7 @@ export const articles: Article[] = [
         '高空風勢較大，若穿著短裙記得做好防風措施，並建議綁起頭髮才不會被風吹得亂七八糟',
       ] },
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['nagoya-castle'] },
     ],
   },
   {
@@ -1338,6 +1362,7 @@ export const articles: Article[] = [
       '回訪意願：★★★★★（靜靜坐在天守閣下就超級療癒）',
       '白日夢小提醒： 本丸御殿內部參觀時須脫鞋、建議可穿著襪子，保護珍貴的木地板，另外這裡也有規定室內拍照勿使用閃光燈與三腳架！',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['nagoya-sky-promenade'] },
     ],
   },
   {
@@ -1387,6 +1412,7 @@ export const articles: Article[] = [
       '回訪意願：★★★★★（四季和光線變化皆有不同風貌，絕對值得二次造訪）',
       '白日夢小提醒：因為橋樑上車流量大且人行步道比較狹窄，所以拍攝時請務必注意來車與自身安全；另外這裡的風其實蠻大的，所以也要小心拿穩相機與手機！另外夜間前往也要記得攜帶腳架與手電筒以策安全！',
       '喜歡這篇攻略嗎？別忘了按讚、分享，並追蹤我們的 IG：tw.traveler.eason以及daydreaming_couple，看更多美照和旅遊攝影資訊分享喔！',
+      { related: ['reine', 'sakrisoy', 'easa-drone-permit'] },
     ],
   },
 ]

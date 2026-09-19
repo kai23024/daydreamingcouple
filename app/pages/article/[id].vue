@@ -13,6 +13,22 @@ if (!article || !category) {
 
 const more = articlesByCategory(article.category).filter(a => a.id !== article.id).slice(0, 3)
 
+function relatedArticle(id: string) {
+  return articles.find(a => a.id === id)
+}
+
+/** Descriptive alt text for a body image block: nearest preceding heading (icon stripped) + location, falling back to the article title. */
+function imageAlt(blockIndex: number): string {
+  for (let i = blockIndex - 1; i >= 0; i--) {
+    const b = article!.body[i]
+    if (typeof b !== 'string' && 'heading' in b) {
+      const clean = b.heading.replace(/^[📌💡]\s*/, '')
+      return article!.location ? `${article!.location}・${clean}` : clean
+    }
+  }
+  return article!.location ? `${article!.location}・${article!.title}` : article!.title
+}
+
 const siteUrl = 'https://daydreamingcouple.com'
 const pageUrl = `${siteUrl}/article/${article.id}`
 const description = articleMetaDescription(article)
@@ -121,6 +137,21 @@ useHead({
             <li v-for="(item, j) in block.infoBox" :key="j">{{ item }}</li>
           </ul>
           <div
+            v-else-if="'related' in block"
+            class="mt-8 rounded-lg border border-morandi-200 bg-morandi-50 p-5"
+          >
+            <p class="text-xs font-semibold tracking-wide text-morandi-400">延伸閱讀</p>
+            <ul class="mt-2 space-y-1.5">
+              <template v-for="rid in block.related" :key="rid">
+                <li v-if="relatedArticle(rid)">
+                  <NuxtLink :to="`/article/${rid}`" class="text-clay-600 hover:underline">
+                    {{ relatedArticle(rid)!.title }}
+                  </NuxtLink>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <div
             v-else
             class="grid gap-3 overflow-hidden rounded-lg"
             :class="block.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'"
@@ -129,7 +160,7 @@ useHead({
               v-for="(src, j) in block.images"
               :key="j"
               :src="src"
-              :alt="article.title"
+              :alt="imageAlt(i)"
               loading="lazy"
               class="h-full w-full rounded-lg object-cover"
             >
