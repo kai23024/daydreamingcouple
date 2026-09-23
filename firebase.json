@@ -7,6 +7,18 @@
       "**/node_modules/**"
     ],
     "cleanUrls": true,
-    "trailingSlash": false
+    "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/📷🍂-東京秋日限定！明治神宮外苑「黃金隧道」",
+        "destination": "/article/meiji-jingu-ginkgo",
+        "type": 301
+      },
+      {
+        "source": "/category/photography",
+        "destination": "/photography",
+        "type": 301
+      }
+    ]
   }
 }
