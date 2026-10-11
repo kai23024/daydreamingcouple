@@ -45,10 +45,10 @@ useHead({
       <p class="font-hand mt-2 text-3xl text-morandi-500">{{ category.description }}</p>
     </header>
 
-    <div v-if="countries.length > 1" class="mb-8 flex flex-wrap gap-2">
+    <div v-if="countries.length > 1" class="mb-8 flex gap-3">
       <button
         type="button"
-        class="rounded-full px-4 py-1.5 text-sm font-medium transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        class="font-hand flex-1 rounded-full py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
         :class="selectedCountry === null ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
         @click="selectedCountry = null"
       >
@@ -58,7 +58,7 @@ useHead({
         v-for="c in countries"
         :key="c"
         type="button"
-        class="rounded-full px-4 py-1.5 text-sm font-medium transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        class="font-hand flex-1 rounded-full py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
         :class="selectedCountry === c ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
         @click="selectedCountry = c"
       >

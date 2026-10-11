@@ -1691,7 +1691,7 @@ export const articles: Article[] = [
   {
     id: 'kehi-jingu',
     category: 'japan',
-    title: '【日本福井敦賀】氣比神宮攝影指南：踏入北陸大鳥居神域，在漫步中找回心靈沉澱！',
+    title: '【福井敦賀】氣比神宮攝影指南：踏入北陸大鳥居神域，在漫步中找回心靈沉澱！',
     date: '2026-10-11',
     location: '福井・敦賀',
     seed: 'kehijingu',
