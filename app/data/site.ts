@@ -48,6 +48,8 @@ export interface Article {
   title: string
   date: string
   location: string
+  /** Country name for categories that mix multiple countries (global, food) — powers the country filter on those category pages. Omitted for single-country categories (taiwan, japan, ...). */
+  country?: string
   seed: string
   /** Real hero photo path (e.g. '/images/<id>/DSCxxxxx.jpg'). Falls back to a picsum seed placeholder when absent. */
   hero?: string
@@ -490,6 +492,7 @@ export const articles: Article[] = [
     title: '【首爾賞櫻】首爾塔櫻花拍攝攻略｜南山公園賞櫻拍照點＋纜車交通整理',
     date: '2026-04-02',
     location: '首爾・南山',
+    country: '韓國',
     seed: 'nseoultower',
     hero: '/images/seoul-tower/DSC07213.jpg',
     body: [
@@ -583,6 +586,7 @@ export const articles: Article[] = [
     title: '【首爾賞櫻】首爾林公園攻略：漫步櫻花隧道、必拍夢幻場景',
     date: '2026-04-05',
     location: '首爾・聖水洞',
+    country: '韓國',
     seed: 'seoulforest',
     hero: '/images/seoul-forest/DSC07025.jpg',
     body: [
@@ -650,6 +654,7 @@ export const articles: Article[] = [
     title: '【首爾賞櫻】慶熙大學攻略：最美哥德式校園建築與櫻花攝影全集',
     date: '2026-04-08',
     location: '首爾・回基洞',
+    country: '韓國',
     seed: 'kyunghee',
     hero: '/images/kyunghee-univ/DSC06910.jpg',
     body: [
@@ -728,6 +733,7 @@ export const articles: Article[] = [
     title: '【挪威羅浮敦群島】亨寧斯維爾（Henningsvær）漫遊指南：充滿文藝氣息的威尼斯之淚',
     date: '2026-08-25',
     location: '羅浮敦群島・亨寧斯維爾',
+    country: '挪威',
     seed: 'henningsvaer',
     hero: '/images/henningsvaer/DJI_20241001215154_0170_D.jpg',
     body: [
@@ -795,6 +801,7 @@ export const articles: Article[] = [
     title: '【挪威羅浮敦群島】薩克利索伊（Sakrisøy）必訪絕景與在地美食全攻略：夢幻黃色小屋與海風中的鮭魚香！',
     date: '2026-08-29',
     location: '羅浮敦群島・薩克利索伊',
+    country: '挪威',
     seed: 'sakrisoy',
     hero: '/images/sakrisoy/DSC01407.jpg',
     body: [
@@ -856,6 +863,7 @@ export const articles: Article[] = [
     title: '【挪威羅浮敦群島】雷訥（Reine）夢幻仙境：走進世界級漁村景色！',
     date: '2026-09-05',
     location: '羅浮敦群島・雷訥',
+    country: '挪威',
     seed: 'reine',
     hero: '/images/reine/DJI_20241002185239_0204.jpg',
     body: [
@@ -922,6 +930,7 @@ export const articles: Article[] = [
     title: '【挪威羅浮敦群島】奧鎮（Å）避世指南：走進世界名字最短的小鎮，在 E10公路盡頭許下浪漫白日夢！',
     date: '2026-09-05',
     location: '羅浮敦群島・奧鎮',
+    country: '挪威',
     seed: 'alofoten',
     hero: '/images/a-lofoten/DJI_20241002181504_0192_D.jpg',
     body: [
@@ -978,6 +987,7 @@ export const articles: Article[] = [
     title: '【首爾弘大美食】弘\'s 小章魚（홍스 쭈꾸미）：生炒Q彈章魚尬滿滿飛魚卵鍋巴飯，辣到哈斯哈斯也停不下來',
     date: '2026-04-10',
     location: '首爾・弘大',
+    country: '韓國',
     seed: 'hongsjjukkumi',
     hero: '/images/hongs-jjukkumi/R0003105.jpg',
     body: [
@@ -1055,6 +1065,7 @@ export const articles: Article[] = [
     title: '【首爾明洞美食】味成屋 미성옥：隱身巷弄的60年老字號，在地人激推的韓牛清甜雪濃湯',
     date: '2026-09-07',
     location: '首爾・明洞',
+    country: '韓國',
     seed: 'miseongok',
     hero: '/images/miseongok/R0003152.jpg',
     body: [
@@ -1107,6 +1118,7 @@ export const articles: Article[] = [
     title: '【首爾弘大咖啡廳】隱身住宅區的寶藏咖啡店！oats coffee (오츠커피)療癒系貓咪維也納咖啡，走再遠都值得的濃郁滋味',
     date: '2026-09-07',
     location: '首爾・弘大',
+    country: '韓國',
     seed: 'oatscoffee',
     hero: '/images/oats-coffee/R0003088.jpg',
     body: [
@@ -1377,6 +1389,7 @@ export const articles: Article[] = [
     title: '【挪威羅浮敦群島】哈姆諾伊（Hamnøy）經典畫面指南：《Lonely Planet》封面的極致美景',
     date: '2026-09-19',
     location: '羅浮敦群島・哈姆諾伊',
+    country: '挪威',
     seed: 'hamnoy',
     hero: '/images/hamnoy/R0003625.jpg',
     body: [
@@ -1427,6 +1440,7 @@ export const articles: Article[] = [
     title: '【名古屋美食】蓬左 Hōsa 鰻魚三吃攻略：外脆內嫩的頂級美食饗宴！',
     date: '2026-09-19',
     location: '名古屋・名古屋城',
+    country: '日本',
     seed: 'hosaunagi',
     hero: '/images/hosa-unagi/R0004453.jpg',
     body: [
@@ -1566,6 +1580,7 @@ export const articles: Article[] = [
     title: '【名古屋美食】風來坊手羽先居酒屋攻略：金黃酥脆的微辣胡椒香！結束旅程後的啤酒微醺時光',
     date: '2026-10-10',
     location: '名古屋・名站',
+    country: '日本',
     seed: 'furaibo',
     hero: '/images/furaibo/DSC01148.jpg',
     body: [
@@ -1624,6 +1639,7 @@ export const articles: Article[] = [
     title: '【挪威羅浮敦群島】斯沃爾維爾（Svolvær）門戶指南：開啟極地公路之旅！',
     date: '2026-10-10',
     location: '羅浮敦群島・斯沃爾維爾',
+    country: '挪威',
     seed: 'svolvaer',
     hero: '/images/svolvaer/DJI_20241001192802_0149_D.jpg',
     body: [
@@ -1721,8 +1737,7 @@ export const articles: Article[] = [
       { images: ['/images/kehi-jingu/R0004277.jpg'] },
       { images: ['/images/kehi-jingu/R0004273.jpg'] },
       { images: ['/images/kehi-jingu/R0004272.jpg'] },
-      { images: ['/images/kehi-jingu/20250112_103444.jpg'] },
-      { images: ['/images/kehi-jingu/20250112_105847.jpg'] },
+      { images: ['/images/kehi-jingu/20250112_103444.jpg', '/images/kehi-jingu/20250112_105847.jpg'] },
       { heading: '結語：在北陸的晨光裡，重新找回心靈的呼吸節奏', level: 1 },
       '在氣比神宮這個充滿歷史重量卻又無比親切的神域裡，放慢腳步、用心感受，就會發現旅途中最美的風景，往往藏在這些平靜而療癒的片刻之中。',
       '好拍程度：★★★☆☆（除了壯觀的鳥居外，祥和的神宮裡更適合靜靜散步）',
