@@ -125,7 +125,18 @@ useHead({
               <li v-else>
                 {{ item.text }}
                 <ul v-if="item.sub" class="mt-2 list-[circle] space-y-2 pl-5 marker:text-morandi-400">
-                  <li v-for="(sub, k) in item.sub" :key="k">{{ sub }}</li>
+                  <li v-for="(sub, k) in item.sub" :key="k">
+                    <a
+                      v-if="typeof sub !== 'string'"
+                      :href="sub.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-1 inline-flex items-center gap-1 rounded-full bg-clay-600 px-3 py-1 text-xs text-white transition hover:bg-clay-700 active:scale-[0.96]"
+                    >
+                      {{ sub.linkText }} ↗
+                    </a>
+                    <template v-else>{{ sub }}</template>
+                  </li>
                 </ul>
               </li>
             </template>

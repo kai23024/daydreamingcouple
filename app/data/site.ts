@@ -19,10 +19,16 @@ export interface ArticleHeadingBlock {
   level?: 1 | 2
 }
 
+export interface ArticleExternalLink {
+  /** A clickable external-link button nested as a sub-bullet (e.g. an official booking site referenced inline in the docx via a real Word hyperlink field). */
+  linkText: string
+  url: string
+}
+
 export interface ArticleListItem {
   text: string
-  /** Nested second-level bullets under this item (e.g. transport modes under "交通與停車方式："). */
-  sub?: string[]
+  /** Nested second-level bullets under this item (e.g. transport modes under "交通與停車方式：") — plain strings, or an ArticleExternalLink for a clickable sub-bullet. */
+  sub?: (string | ArticleExternalLink)[]
 }
 
 export interface ArticleListBlock {
@@ -1778,7 +1784,10 @@ export const articles: Article[] = [
       { items: [
         { text: '(推薦)Way 1村內民宿住宿', sub: ['2026/10/01 ~ 10/31透過【白川鄉觀光協會官方網站】進行登記住宿抽選(內含展望台門票)，11/10 公布中選名單。'] },
         { text: '(推薦)Way 2國內旅行社行程', sub: ['購買時請務必確認包含展望台門票，多數行程僅包含點燈保證入場，但沒有辦法上到展望台。'] },
-        { text: 'Way 3點燈專用巴士券', sub: ['2026/10/13 14:00 起分4回合分流開賣，可至【白川鄉觀光協會官方網站】搶購，濃飛巴士、加越能巴士等公司會推出點燈專用點對點接駁套票(價格依方案而定、不一定包含展望台門票)'] },
+        { text: 'Way 3點燈專用巴士券', sub: [
+          '2026/10/13 14:00 起分4回合分流開賣，可至【白川鄉觀光協會官方網站】搶購，濃飛巴士、加越能巴士等公司會推出點燈專用點對點接駁套票(價格依方案而定、不一定包含展望台門票)',
+          { linkText: '前往白川鄉觀光協會官方網站', url: 'https://shirakawa-go.gr.jp/zh/events/121/#index03' },
+        ] },
         { text: 'Way 4 預約專用停車位', sub: ['2026/12/01 13:00 開賣、在官網或指定售票平台先搶先贏，自駕車輛必須取得專用停車證才能在點燈日進村，但沒有辦法上到展望台'] },
         { text: 'Way 5 Klook 或 KKday 等平台之旅行社一日遊套票', sub: ['僅包含點燈保證入場，但沒有辦法上到展望台'] },
       ] },
@@ -1831,8 +1840,7 @@ export const articles: Article[] = [
       { images: ['/images/shirakawago/DSC00958.jpg'] },
       { images: ['/images/shirakawago/R0004353.jpg'] },
       { images: ['/images/shirakawago/DSC00956.jpg'] },
-      { images: ['/images/shirakawago/20250113_175326.jpg'] },
-      '後面兩張是從三小屋的背面拍攝，這邊也蠻多人拍的！',
+      '這一張是從三小屋的背面拍攝，這邊也蠻多人拍的！',
       { heading: '重頭戲登場：俯瞰點燈夜景與跨越冰雪橋樑', level: 1 },
       { heading: '荻町城跡展望台', level: 2 },
       '隨著天色漸暗，我們在指定的時間排隊並登上觀景台，特別提醒準備好體力呀！因為一開放入場時，大家就會奮力往高處的展望台走去，因為沒有特定安排每個人的位子，所以如果體力還可以就盡快爬上去，不然可能卡不到好位子拍照！！從上往下看合掌村又是完全不一樣的感覺，燈光映照滿是積雪的茅草屋頂，彷彿童話世界一般。',
