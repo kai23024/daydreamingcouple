@@ -97,6 +97,7 @@ useHead({
         <template v-for="(block, i) in article.body" :key="i">
           <p
             v-if="typeof block === 'string'"
+            :class="block.startsWith('💡') ? 'font-bold text-morandi-900' : undefined"
             :style="i === article.body.length - 1 ? { marginTop: '2.5rem' } : undefined"
           >
             {{ block }}
