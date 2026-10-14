@@ -13,12 +13,12 @@ if (!article || !category) {
 
 const more = articlesByCategory(article.category).filter(a => a.id !== article.id).slice(0, 3)
 
-/** Table-of-contents entries derived from the article's own heading blocks — no separate data to maintain. */
+/** Table-of-contents entries derived from the article's own level-1 (大標) heading blocks only — no separate data to maintain. */
 const headings = computed(() => {
-  const result: { index: number; text: string; level: 1 | 2 }[] = []
+  const result: { index: number; text: string }[] = []
   article!.body.forEach((block, index) => {
-    if (typeof block !== 'string' && 'heading' in block) {
-      result.push({ index, text: block.heading, level: block.level ?? 1 })
+    if (typeof block !== 'string' && 'heading' in block && (block.level ?? 1) === 1) {
+      result.push({ index, text: block.heading })
     }
   })
   return result
@@ -205,7 +205,6 @@ useHead({
                 <a
                   :href="`#heading-${h.index}`"
                   class="block text-morandi-600 transition hover:text-clay-600"
-                  :class="h.level === 2 ? 'pl-3 text-xs text-morandi-500' : ''"
                 >
                   {{ h.text }}
                 </a>
@@ -237,7 +236,6 @@ useHead({
           <a
             :href="`#heading-${h.index}`"
             class="block text-morandi-600"
-            :class="h.level === 2 ? 'pl-3 text-xs text-morandi-500' : ''"
             @click="tocOpen = false"
           >
             {{ h.text }}
