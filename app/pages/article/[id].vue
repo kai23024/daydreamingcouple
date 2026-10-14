@@ -133,7 +133,7 @@ useHead({
     </div>
 
     <div class="mx-auto max-w-3xl px-5 py-10 lg:max-w-6xl">
-      <div class="lg:flex lg:items-start lg:justify-center lg:gap-12">
+      <div class="lg:flex lg:justify-center lg:gap-12">
         <div class="lg:min-w-0 lg:max-w-3xl lg:flex-1">
           <NuxtLink :to="`/${category.slug}`" class="text-sm text-clay-600 hover:underline">
             ← {{ category.name }}
