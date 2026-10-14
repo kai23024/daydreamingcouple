@@ -13,6 +13,19 @@ if (!article || !category) {
 
 const more = articlesByCategory(article.category).filter(a => a.id !== article.id).slice(0, 3)
 
+/** Table-of-contents entries derived from the article's own heading blocks — no separate data to maintain. */
+const headings = computed(() => {
+  const result: { index: number; text: string; level: 1 | 2 }[] = []
+  article!.body.forEach((block, index) => {
+    if (typeof block !== 'string' && 'heading' in block) {
+      result.push({ index, text: block.heading, level: block.level ?? 1 })
+    }
+  })
+  return result
+})
+
+const tocOpen = ref(false)
+
 function relatedArticle(id: string) {
   return articles.find(a => a.id === id)
 }
@@ -81,34 +94,37 @@ useHead({
       >
     </div>
 
-    <div class="mx-auto max-w-3xl px-5 py-10">
-      <NuxtLink :to="`/${category.slug}`" class="text-sm text-clay-600 hover:underline">
-        ← {{ category.name }}
-      </NuxtLink>
+    <div class="mx-auto max-w-3xl px-5 py-10 lg:max-w-6xl">
+      <div class="lg:flex lg:items-start lg:justify-center lg:gap-12">
+        <div class="lg:min-w-0 lg:max-w-3xl lg:flex-1">
+          <NuxtLink :to="`/${category.slug}`" class="text-sm text-clay-600 hover:underline">
+            ← {{ category.name }}
+          </NuxtLink>
 
-      <p class="mt-4 text-xs text-morandi-400">
-        <span v-if="article.location">{{ article.location }} ・ </span>{{ article.date }}
-      </p>
-      <h1 class="mt-2 text-3xl leading-snug text-morandi-900 sm:text-4xl">
-        {{ article.title }}
-      </h1>
+          <p class="mt-4 text-xs text-morandi-400">
+            <span v-if="article.location">{{ article.location }} ・ </span>{{ article.date }}
+          </p>
+          <h1 class="mt-2 text-3xl leading-snug text-morandi-900 sm:text-4xl">
+            {{ article.title }}
+          </h1>
 
-      <div class="mt-8 space-y-5 leading-relaxed text-morandi-700">
-        <template v-for="(block, i) in article.body" :key="i">
-          <p
-            v-if="typeof block === 'string'"
-            :class="block.startsWith('💡') ? 'font-bold text-morandi-900' : undefined"
-            :style="i === article.body.length - 1 ? { marginTop: '2.5rem' } : undefined"
-          >
-            {{ block }}
-          </p>
-          <p
-            v-else-if="'heading' in block"
-            class="font-bold text-morandi-900"
-            :class="block.level === 2 ? 'mt-6 text-lg' : 'mt-8 text-xl sm:text-2xl'"
-          >
-            {{ block.heading }}
-          </p>
+          <div class="mt-8 space-y-5 leading-relaxed text-morandi-700">
+            <template v-for="(block, i) in article.body" :key="i">
+              <p
+                v-if="typeof block === 'string'"
+                :class="block.startsWith('💡') ? 'font-bold text-morandi-900' : undefined"
+                :style="i === article.body.length - 1 ? { marginTop: '2.5rem' } : undefined"
+              >
+                {{ block }}
+              </p>
+              <p
+                v-else-if="'heading' in block"
+                :id="`heading-${i}`"
+                class="scroll-mt-24 font-bold text-morandi-900"
+                :class="block.level === 2 ? 'mt-6 text-lg' : 'mt-8 text-xl sm:text-2xl'"
+              >
+                {{ block.heading }}
+              </p>
           <p
             v-else-if="'caption' in block"
             class="text-xs text-morandi-400"
@@ -178,7 +194,56 @@ useHead({
             >
           </div>
         </template>
+          </div>
+        </div>
+
+        <aside v-if="headings.length" class="hidden shrink-0 lg:block lg:w-48">
+          <nav class="sticky top-24">
+            <p class="text-sm font-semibold text-morandi-900">目錄</p>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li v-for="h in headings" :key="h.index">
+                <a
+                  :href="`#heading-${h.index}`"
+                  class="block text-morandi-600 transition hover:text-clay-600"
+                  :class="h.level === 2 ? 'pl-3 text-xs text-morandi-500' : ''"
+                >
+                  {{ h.text }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
       </div>
+    </div>
+
+    <button
+      v-if="headings.length"
+      type="button"
+      class="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-clay-600 text-white shadow-lg transition active:scale-95 lg:hidden"
+      aria-label="開啟目錄"
+      @click="tocOpen = !tocOpen"
+    >
+      <span v-if="!tocOpen">☰</span>
+      <span v-else>✕</span>
+    </button>
+
+    <div
+      v-if="tocOpen"
+      class="fixed inset-x-5 bottom-20 z-40 max-h-[60vh] overflow-y-auto rounded-lg border border-morandi-200 bg-morandi-50 p-5 shadow-lg lg:hidden"
+    >
+      <p class="text-sm font-semibold text-morandi-900">目錄</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li v-for="h in headings" :key="h.index">
+          <a
+            :href="`#heading-${h.index}`"
+            class="block text-morandi-600"
+            :class="h.level === 2 ? 'pl-3 text-xs text-morandi-500' : ''"
+            @click="tocOpen = false"
+          >
+            {{ h.text }}
+          </a>
+        </li>
+      </ul>
     </div>
 
     <div v-if="more.length" class="border-t border-morandi-200 bg-morandi-100/40">
