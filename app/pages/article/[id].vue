@@ -26,6 +26,44 @@ const headings = computed(() => {
 
 const tocOpen = ref(false)
 
+/**
+ * Highlights whichever TOC entry the reader is currently scrolled to. Rather than trusting
+ * IntersectionObserver's own isIntersecting/entry-ordering (which can batch several headings
+ * into one callback out of document order during a fast scroll), every callback just recomputes
+ * from scratch: the active heading is the last one (in document order) whose top has scrolled
+ * past a fixed line near the top of the viewport.
+ */
+const activeHeadingIndex = ref<number | null>(null)
+let headingObserver: IntersectionObserver | null = null
+const DETECTION_LINE_PX = 100
+
+function recomputeActiveHeading() {
+  let current: number | null = null
+  for (const h of headings.value) {
+    const el = document.getElementById(`heading-${h.index}`)
+    if (el && el.getBoundingClientRect().top - DETECTION_LINE_PX <= 0) {
+      current = h.index
+    }
+  }
+  if (current !== null) activeHeadingIndex.value = current
+}
+
+onMounted(() => {
+  if (!headings.value.length) return
+  headingObserver = new IntersectionObserver(recomputeActiveHeading, {
+    rootMargin: `-${DETECTION_LINE_PX}px 0px -50% 0px`,
+    threshold: 0
+  })
+  for (const h of headings.value) {
+    const el = document.getElementById(`heading-${h.index}`)
+    if (el) headingObserver.observe(el)
+  }
+})
+
+onUnmounted(() => {
+  headingObserver?.disconnect()
+})
+
 function relatedArticle(id: string) {
   return articles.find(a => a.id === id)
 }
@@ -204,7 +242,8 @@ useHead({
               <li v-for="h in headings" :key="h.index">
                 <a
                   :href="`#heading-${h.index}`"
-                  class="block text-morandi-600 transition hover:text-clay-600"
+                  class="block transition hover:text-clay-600"
+                  :class="h.index === activeHeadingIndex ? 'font-semibold text-clay-600' : 'text-morandi-600'"
                 >
                   {{ h.text }}
                 </a>
@@ -235,7 +274,8 @@ useHead({
         <li v-for="h in headings" :key="h.index">
           <a
             :href="`#heading-${h.index}`"
-            class="block text-morandi-600"
+            class="block"
+            :class="h.index === activeHeadingIndex ? 'font-semibold text-clay-600' : 'text-morandi-600'"
             @click="tocOpen = false"
           >
             {{ h.text }}
