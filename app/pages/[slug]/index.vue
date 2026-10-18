@@ -58,27 +58,24 @@ useHead({
       <p class="font-hand mt-2 text-3xl text-morandi-500">{{ category.description }}</p>
     </header>
 
-    <div v-if="seasons.length" class="mb-4 flex gap-3">
+    <div v-if="seasons.length || regions.length > 1" class="mb-8 flex flex-wrap gap-3">
+      <button
+        type="button"
+        class="font-hand rounded-full px-6 py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        :class="selectedSeason === null && selectedRegion === null ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
+        @click="selectedSeason = null; selectedRegion = null"
+      >
+        全部
+      </button>
       <button
         v-for="s in seasons"
         :key="s"
         type="button"
-        class="font-hand flex-1 rounded-full py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        class="font-hand rounded-full px-6 py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
         :class="selectedSeason === s ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
         @click="selectedSeason = selectedSeason === s ? null : s"
       >
         {{ s }}
-      </button>
-    </div>
-
-    <div v-if="regions.length > 1" class="mb-8 flex flex-wrap gap-3">
-      <button
-        type="button"
-        class="font-hand rounded-full px-6 py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
-        :class="selectedRegion === null ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
-        @click="selectedRegion = null"
-      >
-        全部
       </button>
       <button
         v-for="r in regions"
@@ -86,7 +83,7 @@ useHead({
         type="button"
         class="font-hand rounded-full px-6 py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
         :class="selectedRegion === r ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
-        @click="selectedRegion = r"
+        @click="selectedRegion = selectedRegion === r ? null : r"
       >
         {{ r }}
       </button>
