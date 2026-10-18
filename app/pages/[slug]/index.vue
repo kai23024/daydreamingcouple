@@ -12,11 +12,24 @@ if (!category) {
 const items = articlesByCategory(slug)
 const label = splitCategoryName(category.name)
 
+// Season filter — only shown when at least one article in this category is season-limited (e.g. japan).
+const seasons = [...new Set(items.map(a => a.season).filter((s): s is string => !!s))]
+const selectedSeason = ref<string | null>(null)
+
+// Region (縣市) filter — only shown when this category's articles span more than one region (e.g. japan).
+const regions = [...new Set(items.map(a => a.region).filter((r): r is string => !!r))]
+const selectedRegion = ref<string | null>(null)
+
 // Country filter — only shown when this category's articles actually span more than one country (e.g. global, food).
 const countries = [...new Set(items.map(a => a.country).filter((c): c is string => !!c))]
 const selectedCountry = ref<string | null>(null)
+
 const filteredItems = computed(() =>
-  selectedCountry.value ? items.filter(a => a.country === selectedCountry.value) : items
+  items.filter(a =>
+    (!selectedSeason.value || a.season === selectedSeason.value) &&
+    (!selectedRegion.value || a.region === selectedRegion.value) &&
+    (!selectedCountry.value || a.country === selectedCountry.value)
+  )
 )
 
 const siteUrl = 'https://daydreamingcouple.com'
@@ -44,6 +57,48 @@ useHead({
       <h1 class="font-hand text-4xl text-morandi-900">{{ label.zh }}</h1>
       <p class="font-hand mt-2 text-3xl text-morandi-500">{{ category.description }}</p>
     </header>
+
+    <div v-if="seasons.length" class="mb-4 flex gap-3 sm:max-w-sm">
+      <button
+        type="button"
+        class="font-hand flex-1 rounded-full py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        :class="selectedSeason === null ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
+        @click="selectedSeason = null"
+      >
+        全部
+      </button>
+      <button
+        v-for="s in seasons"
+        :key="s"
+        type="button"
+        class="font-hand flex-1 rounded-full py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        :class="selectedSeason === s ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
+        @click="selectedSeason = s"
+      >
+        {{ s }}
+      </button>
+    </div>
+
+    <div v-if="regions.length > 1" class="mb-8 flex flex-wrap gap-3">
+      <button
+        type="button"
+        class="font-hand rounded-full px-6 py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        :class="selectedRegion === null ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
+        @click="selectedRegion = null"
+      >
+        全部
+      </button>
+      <button
+        v-for="r in regions"
+        :key="r"
+        type="button"
+        class="font-hand rounded-full px-6 py-3 text-xl transition active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay-600"
+        :class="selectedRegion === r ? 'bg-clay-600 text-white' : 'bg-morandi-100 text-morandi-700 hover:bg-morandi-200'"
+        @click="selectedRegion = r"
+      >
+        {{ r }}
+      </button>
+    </div>
 
     <div v-if="countries.length > 1" class="mb-8 flex gap-3">
       <button

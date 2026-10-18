@@ -56,6 +56,10 @@ export interface Article {
   location: string
   /** Country name for categories that mix multiple countries (global, food) — powers the country filter on those category pages. Omitted for single-country categories (taiwan, japan, ...). */
   country?: string
+  /** Prefecture/city name (e.g. '東京', '名古屋') — powers the 縣市 filter row on category pages, e.g. japan. */
+  region?: string
+  /** Season-limited label (e.g. '秋季限定', '冬季限定') for content tied to a specific season — powers the season filter row. Omitted for year-round content. */
+  season?: string
   seed: string
   /** Real hero photo path (e.g. '/images/<id>/DSCxxxxx.jpg'). Falls back to a picsum seed placeholder when absent. */
   hero?: string
@@ -307,6 +311,8 @@ export const articles: Article[] = [
   {
     id: 'ginkgo-utokyo',
     category: 'japan',
+    region: '東京',
+    season: '秋季限定',
     title: '【東京秋季限定】走進日本最高學府的金色殿堂！東京大學銀杏：兼具書卷氣與史詩感的攝影之旅',
     date: '2025-11-20',
     location: '東京・本鄉',
@@ -366,6 +372,8 @@ export const articles: Article[] = [
   {
     id: 'roppongi-lights',
     category: 'japan',
+    region: '東京',
+    season: '冬季限定',
     title: '【東京冬季限定】六本木「鑽石星光」點燈攻略：捕捉奢華都會夜景的頂級氛圍感',
     date: '2025-12-24',
     location: '東京・六本木',
@@ -431,6 +439,8 @@ export const articles: Article[] = [
   {
     id: 'meiji-jingu-ginkgo',
     category: 'japan',
+    region: '東京',
+    season: '秋季限定',
     title: '【東京秋季限定】明治神宮外苑「黃金隧道」點燈攻略：捕捉夢幻夜景的微醺浪漫',
     date: '2025-11-25',
     location: '東京・北青山',
@@ -1257,6 +1267,7 @@ export const articles: Article[] = [
   {
     id: 'nagoya-sky-promenade',
     category: 'japan',
+    region: '名古屋',
     title: '【名古屋夜景】Sky Promenade戶外展望台攻略：360度無邊際百萬夜景，情侶約會必去浪漫高空散策！',
     date: '2026-09-13',
     location: '名古屋・名站',
@@ -1322,6 +1333,7 @@ export const articles: Article[] = [
   {
     id: 'nagoya-castle',
     category: 'japan',
+    region: '名古屋',
     title: '【名古屋】名古屋城與本丸御殿全攻略：漫步德川幕府的璀璨歲月',
     date: '2026-09-19',
     location: '名古屋・名古屋城',
@@ -1492,6 +1504,7 @@ export const articles: Article[] = [
   {
     id: 'kenrokuen',
     category: 'japan',
+    region: '金澤',
     title: '【石川金澤】兼六園、金澤城散策攻略：四季皆美的日本三大名園！走進宛如明信片的歲月靜好！',
     date: '2026-09-20',
     location: '金澤・兼六園',
@@ -1697,6 +1710,7 @@ export const articles: Article[] = [
   {
     id: 'kehi-jingu',
     category: 'japan',
+    region: '福井',
     title: '【福井敦賀】氣比神宮攝影指南：踏入北陸大鳥居神域，在漫步中找回心靈沉澱！',
     date: '2026-10-11',
     location: '福井・敦賀',
@@ -1757,6 +1771,8 @@ export const articles: Article[] = [
   {
     id: 'shirakawago',
     category: 'japan',
+    region: '岐阜',
+    season: '冬季限定',
     title: '【岐阜白川】白川鄉合掌村夢幻攻略：從早到晚漫步童話雪國，必訪景點與夜間點燈指南！',
     date: '2026-10-13',
     location: '岐阜・白川鄉',
@@ -1876,6 +1892,8 @@ export const articles: Article[] = [
   {
     id: 'chichibu',
     category: 'japan',
+    region: '埼玉',
+    season: '冬季限定',
     title: '【埼玉冬季限定】秩父夜祭完整攻略：東京近郊楓紅與冬日祭典山車的絢爛浪漫',
     date: '2026-10-14',
     location: '埼玉・秩父',
@@ -2025,6 +2043,8 @@ export const articles: Article[] = [
   {
     id: 'kawaguchiko',
     category: 'japan',
+    region: '山梨',
+    season: '秋季限定',
     title: '【山梨秋季限定】河口湖絕景指南：新倉山、淺間大社、楓葉迴廊、留守岩，捕捉富士山最浪漫的紅葉詩篇',
     date: '2026-10-18',
     location: '山梨・河口湖',
