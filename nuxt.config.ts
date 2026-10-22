@@ -52,5 +52,25 @@ gtag('config', 'G-LXTYGENVG8');`
       routes: ['/', '/taiwan', '/japan', '/global', '/photography', '/food', '/stay', '/trips', '/about'],
       crawlLinks: true
     }
+  },
+  routeRules: {
+    // Stale URLs still hit by crawlers/old links/bookmarks — redirected at the framework level
+    // rather than via firebase.json, since the live site (daydreamingcouple.com) is served by
+    // Firebase App Hosting, not the classic Firebase Hosting site firebase.json's redirects target.
+    '/📷🍂-東京秋日限定！明治神宮外苑「黃金隧道」': { redirect: '/article/meiji-jingu-ginkgo' },
+    '/category/photography': { redirect: '/photography' },
+    // Removed placeholder articles (deleted Aug-Sep 2026) with no 1:1 replacement — redirected to
+    // their original category page rather than left as dangling 404s.
+    '/article/sun-moon-lake': { redirect: '/taiwan' },
+    '/article/kyoto-arashiyama': { redirect: '/japan' },
+    '/article/tteokbokki': { redirect: '/food' },
+    '/article/seoul-cafe': { redirect: '/food' },
+    '/article/jiufen-teahouse': { redirect: '/food' },
+    '/article/gear-notes': { redirect: '/photography' },
+    '/article/golden-hour': { redirect: '/photography' },
+    '/article/ryokan-note': { redirect: '/stay' },
+    '/article/seaside-hotel': { redirect: '/stay' },
+    '/article/day-trip-jiaoxi': { redirect: '/trips' },
+    '/article/day-trip-tamsui': { redirect: '/trips' }
   }
 })
