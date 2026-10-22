@@ -200,7 +200,26 @@ useHead({
             v-else-if="'infoBox' in block"
             class="list-disc space-y-2 rounded-lg bg-morandi-100 p-6 pl-10 marker:text-clay-600"
           >
-            <li v-for="(item, j) in block.infoBox" :key="j">{{ item }}</li>
+            <li v-for="(item, j) in block.infoBox" :key="j">
+              <template v-if="typeof item === 'string'">{{ item }}</template>
+              <template v-else>
+                {{ item.text }}
+                <ul v-if="item.sub" class="mt-2 list-[circle] space-y-2 pl-5 marker:text-morandi-400">
+                  <li v-for="(sub, k) in item.sub" :key="k">
+                    <a
+                      v-if="typeof sub !== 'string'"
+                      :href="sub.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-1 inline-flex items-center gap-1 rounded-full bg-clay-600 px-3 py-1 text-xs text-white transition hover:bg-clay-700 active:scale-[0.96]"
+                    >
+                      {{ sub.linkText }} ↗
+                    </a>
+                    <template v-else>{{ sub }}</template>
+                  </li>
+                </ul>
+              </template>
+            </li>
           </ul>
           <div
             v-else-if="'related' in block"

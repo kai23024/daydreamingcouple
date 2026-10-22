@@ -39,8 +39,8 @@ export interface ArticleListBlock {
 }
 
 export interface ArticleInfoBoxBlock {
-  /** A highlighted quick-facts box (address, hours, price, etc.) rendered as a shaded bullet list — matches a docx "旅遊懶人包"-style callout box. */
-  infoBox: string[]
+  /** A highlighted quick-facts box (address, hours, price, etc.) rendered as a shaded bullet list — matches a docx "旅遊懶人包"-style callout box. Items can be plain strings, or an ArticleListItem (e.g. a "官方網站：" row with a clickable ArticleExternalLink button nested in `sub`). */
+  infoBox: (string | ArticleListItem)[]
 }
 
 export interface ArticleRelatedBlock {
@@ -2284,8 +2284,6 @@ export const articles: Article[] = [
         '特定日期（依官網公告）可以訂購夜宿方案',
         '門票費用：溫泉入館費（成人）平日約 1,100 日圓，例假日約 1,380 日圓（內含毛巾與館內服等方案可自由加購，依官網公告為準）',
         '建議停留時間：半天至一天（搭乘特急 Laview + 秩父周邊散策 + 祭之湯泡湯美食體驗約 3~5 小時）',
-      ] },
-      { items: [
         { text: '官方網站：', sub: [
           { linkText: '西武秩父站前溫泉 祭之湯 官網', url: 'https://www.seibu-leisure.co.jp/matsuri/index.html' },
         ] },
