@@ -80,7 +80,7 @@ export const articles: Article[] = [
   {
     id: 'buyan-pavilion',
     category: 'taiwan',
-    title: '【九份不厭亭】寂寞公路的浪漫指南：收服夕陽銀河的絕美日夜',
+    title: '【新北瑞芳】九份不厭亭浪漫指南：收服夕陽銀河的絕美日夜，眺望綿延至海平面的寂寞公路',
     date: '2026-02-14',
     location: '新北・九份',
     seed: 'buyanpavilion',
@@ -135,7 +135,7 @@ export const articles: Article[] = [
   {
     id: 'liandong-elementary',
     category: 'taiwan',
-    title: '【九份濂洞國小】走進日系動畫的浪漫！收服彩色溜滑梯與陰陽海絕景',
+    title: '【新北瑞芳】九份濂洞國小攻略：踏上《神隱少女》經典長階梯，俯瞰陰陽海的絕美海景小學',
     date: '2026-01-22',
     location: '新北・九份',
     seed: 'liandongelementary',
@@ -183,7 +183,7 @@ export const articles: Article[] = [
   {
     id: 'quanjitang',
     category: 'taiwan',
-    title: '【金瓜石勸濟堂&報時山步道】 逃離城市喧囂！海風、香火與山城美景，5分鐘登頂看最美陰陽海',
+    title: '【新北瑞芳】金瓜石勸濟堂＆報時山步道全攻略：逃離城市喧囂！5分鐘登頂看最美陰陽海',
     date: '2026-03-05',
     location: '新北・金瓜石',
     seed: 'quanjitang',
@@ -255,7 +255,7 @@ export const articles: Article[] = [
   {
     id: 'jilong-mountain',
     category: 'taiwan',
-    title: '【九份雞籠山】拍出宮崎駿動畫般的黃金山城！雞籠山夜景攻略大公開',
+    title: '【新北瑞芳】九份雞籠山步道夜景攻略：登上小百岳俯瞰無敵海景，拍出宮崎駿動畫般的黃金山城！',
     date: '2026-08-30',
     location: '新北・九份',
     seed: 'jilong',
