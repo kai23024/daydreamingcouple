@@ -56,7 +56,7 @@ useHead({
         <li>
           <strong class="font-medium text-morandi-800">平台駐站優質創作者：</strong>
           <ul class="mt-2 list-[circle] space-y-2 pl-5 marker:text-morandi-400">
-            <li>Funliday 長期合作撰稿作家</li>
+            <li>2022年至2026年Funliday合作撰稿作家</li>
             <li>2025 年去趣合作撰稿作家</li>
           </ul>
         </li>
