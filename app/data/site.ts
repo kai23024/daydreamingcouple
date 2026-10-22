@@ -2046,7 +2046,7 @@ export const articles: Article[] = [
     region: '山梨',
     season: '秋季限定',
     title: '【山梨秋季限定】河口湖絕景指南：新倉山、淺間大社、楓葉迴廊、留守岩，捕捉富士山最浪漫的紅葉詩篇',
-    date: '2026-10-18',
+    date: '2026-10-23',
     location: '山梨・河口湖',
     seed: 'kawaguchiko',
     hero: '/images/kawaguchiko/DSC09019.jpg',
