@@ -30,6 +30,7 @@ const taiwan = { category: categoryBySlug('taiwan')!, articles: latestByCategory
 const japan = { category: categoryBySlug('japan')!, articles: latestByCategory('japan') }
 const global = { category: categoryBySlug('global')!, articles: latestByCategory('global') }
 const food = { category: categoryBySlug('food')!, articles: latestByCategory('food') }
+const trips = { category: categoryBySlug('trips')!, articles: latestByCategory('trips') }
 const photography = { category: categoryBySlug('photography')!, articles: latestByCategory('photography') }
 </script>
 
@@ -63,6 +64,7 @@ const photography = { category: categoryBySlug('photography')!, articles: latest
       <CategorySection :category="japan.category" :articles="japan.articles" />
       <CategorySection :category="taiwan.category" :articles="taiwan.articles" />
       <CategorySection :category="food.category" :articles="food.articles" />
+      <CategorySection :category="trips.category" :articles="trips.articles" />
       <CategorySection :category="photography.category" :articles="photography.articles" />
     </div>
   </div>
