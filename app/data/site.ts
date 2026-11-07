@@ -3010,7 +3010,7 @@ export const articles: Article[] = [
   {
     id: 'chiayi-2day-trip',
     category: 'trips',
-    title: '【嘉義二日遊】深度體驗文化與在地風味｜老屋咖啡、古早味美學與藝術饗宴完整攻略',
+    title: '【嘉義二日遊】深度體驗文化與在地風味：老屋咖啡、古早味美學與藝術饗宴完整攻略',
     date: '2026-11-08',
     location: '嘉義・市區',
     seed: 'chiayi',
